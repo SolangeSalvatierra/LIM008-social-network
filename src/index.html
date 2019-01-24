@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAZ1SawkGqX0cPM_nRTEKYQ4b9WYZC3tF0",
+    authDomain: "creando-login.firebaseapp.com",
+    databaseURL: "https://creando-login.firebaseio.com",
+    projectId: "creando-login",
+    storageBucket: "creando-login.appspot.com",
+    messagingSenderId: "331602657745"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 <body>
+  <div class="container">
+    <form id="form">
+      <div class="form-block">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="" id="email">
+      </div>
+      <div class="form-block">
+        <label for="password">Password</label>
+        <input type="text" name="password" value="" id="password">
+      </div>
+      <input type="submit" name="" value="">
+    </form>
+  </div>
   <script type="module" src="main.js"></script>
 </body>
 </html>
