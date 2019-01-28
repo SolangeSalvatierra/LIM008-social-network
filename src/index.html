@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   
-<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-authentication.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -24,14 +24,13 @@
   <div class="container">
     <form id="form">
       <div class="form-block">
-        <label for="email">Email</label>
-        <input type="text" name="email" value="" id="email">
+        <input type="text" name="email" value="" id="email" placeholder="Email">
       </div>
       <div class="form-block">
-        <label for="password">Password</label>
-        <input type="text" name="password" value="" id="password">
+        <input type="text" name="password" value="" id="password" placeholder="Password">
       </div>
       <input type="submit" name="" value="">
+      <button id="btn-google">Ingresa con google</button>
     </form>
   </div>
   <script type="module" src="main.js"></script>
