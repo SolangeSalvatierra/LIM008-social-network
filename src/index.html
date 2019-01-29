@@ -5,8 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
+            authDomain: "usuarios-28a17.firebaseapp.com",
+            databaseURL: "https://usuarios-28a17.firebaseio.com",
+            projectId: "usuarios-28a17",
+            storageBucket: "usuarios-28a17.appspot.com",
+            messagingSenderId: "436355716999"
+          };
+          firebase.initializeApp(config);
+        </script>
+
 </head>
 <body>
+
+ <h4> Registro de usuarios </h4>
+            <input id="email" type = "email" placeholder="Ingresa email">
+            <!-- <input id="name" type = "name" placeholder="Nombre Completo"> 
+            <input id="name-user" type = "name-user" placeholder="Nombre de Usuario"> -->
+            <input id="password" type = "password" placeholder="Ingresa contraseña">
+            <button type = "button" id="btn-registrar"> Registrar </button>
+
+            <h4> Ingreso de usuarios </h4>
+            <input id="email2" type = "email" placeholder="Ingresa email">
+            <input id="password2" type = "password" placeholder="Ingresa contraseña">
+            <button type = "button" id="btn-acceder"> Acceder </button>
+
+            <div id= "contenido">
+            
+            </div>
+
   <script type="module" src="main.js"></script>
+ 
 </body>
 </html>
