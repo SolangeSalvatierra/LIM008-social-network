@@ -5,31 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  
-<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
-<script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  <script>
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAZ1SawkGqX0cPM_nRTEKYQ4b9WYZC3tF0",
-    authDomain: "creando-login.firebaseapp.com",
-    databaseURL: "https://creando-login.firebaseio.com",
-    projectId: "creando-login",
-    storageBucket: "creando-login.appspot.com",
-    messagingSenderId: "331602657745"
-  };
-  firebase.initializeApp(config);
-</script>
+    var config = {
+     apiKey: "AIzaSyAZ1SawkGqX0cPM_nRTEKYQ4b9WYZC3tF0",
+     authDomain: "creando-login.firebaseapp.com",
+     databaseURL: "https://creando-login.firebaseio.com",
+     projectId: "creando-login",
+     storageBucket: "creando-login.appspot.com",
+     messagingSenderId: "331602657745"
+   };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
   <div class="container">
     <form id="form">
       <div class="form-block">
-        <label for="email">Email</label>
-        <input type="text" name="email" value="" id="email">
+        <input type="text" name="email" value="" id="email" placeholder="Email">
       </div>
       <div class="form-block">
-        <label for="password">Password</label>
-        <input type="text" name="password" value="" id="password">
+        <input type="text" name="password" value="" id="password" placeholder="Password">
       </div>
       <input type="submit" name="" value="">
     </form>
