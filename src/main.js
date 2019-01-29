@@ -7,6 +7,13 @@ import { aparecer} from './lib/index.js';
 import { cerrar } from './lib/index.js';
 import { verificar } from './lib/index.js';
 
+import { loginGoogle } from './lib/index.js';
+const prueba = () => {
+  loginGoogle();
+}
+
+document.getElementById("btn-google").addEventListener("click", prueba, false);
+
 
 
 const btnRegistrar = document.getElementById('btn-registrar');
@@ -23,3 +30,5 @@ btnAcceder.addEventListener('click', () => {
 });
 
 cerrar();
+
+
