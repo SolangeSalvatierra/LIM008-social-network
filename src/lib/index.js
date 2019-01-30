@@ -91,19 +91,20 @@ export const cerrar = () => {
 
 export const verificar = () => {
   let user = firebase.auth().currentUser;
-if (user){
-user.sendEmailVerification().then(() => {
-// Email sent.
-console.log("enviando correo...");
-}).catch((error) => {
+
+  if (user) {
+  user.sendEmailVerification().then(() => {
+  // Email sent.
+  console.log("enviando correo...");  
+  }).catch((error) => {
 // An error happened.
 console.log(error);
-});
-}
+  });
+  }
 }
 export const loginGoogle = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
@@ -113,6 +114,7 @@ export const loginGoogle = () => {
     // ...
   }).catch(function(error) {
     // Handle Errors here.
+    console.log (error);
     var errorCode = error.code;
     var errorMessage = error.message;
     // The email of the user's account used.
@@ -132,7 +134,10 @@ export const loginFacebook = () => {
     // The signed-in user info.
     var user = result.user;
     // ...
+
   }).catch(function(error) {
+
+    console.log(error);
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -143,3 +148,4 @@ export const loginFacebook = () => {
     // ...
   });
 }
+
