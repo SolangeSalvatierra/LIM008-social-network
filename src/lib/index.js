@@ -92,13 +92,15 @@ export const cerrar = () => {
 export const verificar = () => {
   let user = firebase.auth().currentUser;
 
-user.sendEmailVerification().then(() => {
-// Email sent.
-console.log("enviando correo...");
-}).catch((error) => {
-// An error happened.
-console.log(error);
-});
+  if (user) {
+    user.sendEmailVerification().then(() => {
+      // Email sent.
+      console.log("enviando correo...");
+      }).catch((error) => {
+      // An error happened.
+      console.log(error);
+      });
+  }
 }
 export const loginGoogle = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
