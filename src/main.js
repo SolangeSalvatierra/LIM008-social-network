@@ -1,13 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { registrar } from './lib/index.js';
-import { acceder } from './lib/index.js';
-import { observador } from './lib/index.js';
-import { aparecer} from './lib/index.js';
-import { cerrar } from './lib/index.js';
-import { verificar } from './lib/index.js';
-
-import { loginGoogle } from './lib/index.js';
+import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle} from './lib/index.js';
+ 
 const prueba = () => {
   loginGoogle();
 }

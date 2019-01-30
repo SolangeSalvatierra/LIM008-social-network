@@ -104,7 +104,6 @@ export const verificar = () => {
 }
 export const loginGoogle = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
@@ -113,6 +112,7 @@ export const loginGoogle = () => {
     console.log(user);
     // ...
   }).catch(function(error) {
+    console.log(error);
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
