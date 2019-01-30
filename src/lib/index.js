@@ -91,7 +91,7 @@ export const cerrar = () => {
 
 export const verificar = () => {
   let user = firebase.auth().currentUser;
-
+if (user){
 user.sendEmailVerification().then(() => {
 // Email sent.
 console.log("enviando correo...");
@@ -100,7 +100,7 @@ console.log("enviando correo...");
 console.log(error);
 });
 }
-
+}
 export const loginGoogle = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -110,6 +110,27 @@ export const loginGoogle = () => {
     // The signed-in user info.
     var user = result.user;
     console.log(user);
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
+
+export const loginFacebook = () => {
+  var provider = new firebase.auth.FacebookAuthProvider();
+  provider.addScope('publish_pages');
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
     // ...
   }).catch(function(error) {
     // Handle Errors here.
