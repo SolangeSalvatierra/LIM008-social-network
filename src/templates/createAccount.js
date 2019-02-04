@@ -10,6 +10,7 @@ export const formCrearCuenta = () => {
             <input id="name-user" type = "name-user" placeholder="Nombre de Usuario"> -->
             <input id="password" type = "password" placeholder="Ingresa contraseña">
             <button type = "button" id="btn-crear"> Crear/Registrar </button>
+            
     `;
     // const form = document.createElement('form');
     // form.setAttribute('id', 'login');
@@ -22,3 +23,7 @@ export const formCrearCuenta = () => {
 
     return form;
 }
+
+{/* 
+            <button type = "button" id="btn-crear"> Crear/Registrar con Google </button>
+            <button type = "button" id="btn-crear"> Crear/Registrar con Facebook </button> */}

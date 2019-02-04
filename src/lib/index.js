@@ -1,6 +1,6 @@
-export const ingresarCuenta = () => {
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
+import { formCrearMuro } from "../templates/muro.js";
+
+export const ingresarCuenta = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
       // Handle Errors here.
@@ -12,9 +12,7 @@ export const ingresarCuenta = () => {
     });
   }
 
-  export const crearCuenta = () => {  
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
+  export const crearCuenta = (email, password) => {  
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() =>{
       verificar()
@@ -35,7 +33,7 @@ export const ingresarCuenta = () => {
     if (user) {
     user.sendEmailVerification().then(() => {
     // Email sent.
-    console.log("enviando correo...");  
+    console.log("se envió correo...");  
     }).catch((error) => {
   // An error happened.
   console.log(error);
@@ -69,17 +67,16 @@ export const ingresarCuenta = () => {
         }
       });
   }
-  observador();
-  
+  observador();  
+
   export const aparecer = (user) => {
     const users = user;
-    const contenido = document.getElementById("contenido");
+    // const contenido = document.getElementById("contenido");
     if (users.emailVerified){ 
-    contenido.innerHTML = `
-        <p> Bienvenido! </p>
-        <button onclick="cerrar()"> Cerrar Sesión </button>
-        `;
+          //formCrearMuro();
+          return true;
     } 
+    return false;
   }
   
   export const cerrar = () => {
