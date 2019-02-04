@@ -1,13 +1,18 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook } from "./lib/index.js";
+import {ingresarCuenta, crearCuenta} from "./lib/index.js";
 
-const changeHash = (hash) =>  {
-  location.hash = hash;
-}
+export const clickAcceder = () => {
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    alert('probando si funciona el click acceder');
+    ingresarCuenta(email, password);
+    //   .then(() => changeHash('/home'))
+    //   .catch(() => {})
+  }
 
-export const signInOnSubmit = () => {
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
-  acceder(email2, password2)
-    .then(() => changeHash('/home'))
-    .catch(() => {})
-}
+  export const clickCrear = () => {
+    const email = document.querySelector('#email2').value;
+    const password = document.querySelector('#password2').value;
+    alert('probando si funciona el click crear');
+    crearCuenta(email, password);
+
+  }

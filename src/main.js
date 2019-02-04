@@ -1,18 +1,8 @@
-import { initRouter } from "./router.js";
+import {formIngresarCuenta} from "./templates/login.js";
 
 const init = () => {
-  // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
-    authDomain: "usuarios-28a17.firebaseapp.com",
-    databaseURL: "https://usuarios-28a17.firebaseio.com",
-    projectId: "usuarios-28a17",
-    storageBucket: "usuarios-28a17.appspot.com",
-    messagingSenderId: "436355716999"
-  };
-  firebase.initializeApp(config);
-  initRouter();
+    alert('probando si funciona en función init')
+    formIngresarCuenta();
 }
 
 window.onload = init();
-

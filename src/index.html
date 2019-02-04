@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
+      authDomain: "usuarios-28a17.firebaseapp.com",
+      databaseURL: "https://usuarios-28a17.firebaseio.com",
+      projectId: "usuarios-28a17",
+      storageBucket: "usuarios-28a17.appspot.com",
+      messagingSenderId: "436355716999"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
     <div id="root">
-      </div>
-      <!-- scripts -->      
-      <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>     
-  <script type="module" src="main.js"> </script>
- 
+      <form id = "login"></form>
+      <form id = "newAccount"></form>
+    </div>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
