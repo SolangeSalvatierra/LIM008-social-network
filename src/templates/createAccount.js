@@ -5,10 +5,10 @@ import {clickCrear} from "../view-controller.js";
 export const formCrearCuenta = () => {
     const contenidoForm = `
             <h4> Registro de usuarios </h4>
-            <input id="email2" type = "email" placeholder="Ingresa email">
+            <input id="email" type = "email" placeholder="Ingresa email">
             <!-- <input id="name" type = "name" placeholder="Nombre Completo"> 
             <input id="name-user" type = "name-user" placeholder="Nombre de Usuario"> -->
-            <input id="password2" type = "password" placeholder="Ingresa contraseña">
+            <input id="password" type = "password" placeholder="Ingresa contraseña">
             <button type = "button" id="btn-crear"> Crear/Registrar </button>
     `;
     // const form = document.createElement('form');
@@ -18,6 +18,7 @@ export const formCrearCuenta = () => {
     // El querySelector hace en este caso la función del "document.getElementById"
     const btnAcceder = form.querySelector('#btn-crear');
     btnAcceder.addEventListener('click', clickCrear);
+    
 
     return form;
 }

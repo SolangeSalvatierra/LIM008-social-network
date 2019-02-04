@@ -1,6 +1,8 @@
 import {clickAcceder} from "../view-controller.js";
+import { loginGoogle, loginFacebook } from "../lib/index.js";
 //solo para probar que pase de un form a otro, ya que aun no uso el router
 import {formCrearCuenta} from "../templates/createAccount.js";
+
 
 export const formIngresarCuenta = () => {
     const contenidoForm = `
@@ -22,6 +24,10 @@ export const formIngresarCuenta = () => {
     // El querySelector hace en este caso la función del "document.getElementById"
     const btnAcceder = form.querySelector('#btn-acceder');
     btnAcceder.addEventListener('click', clickAcceder);
+    const btnGoogle = form.querySelector('#btn-google');
+    btnGoogle.addEventListener('click', loginGoogle);
+    const btnFacebook = form.querySelector('#btn-facebook');
+    btnFacebook.addEventListener('click', loginFacebook);
     const btnRegistrarse = form.querySelector('#btn-registrarse');
     btnRegistrarse.addEventListener('click', () => {
         formCrearCuenta();
