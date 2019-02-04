@@ -3,11 +3,7 @@
 export const registrar = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-  /*var nameuser = document.getElementById("name-user").value;
-  var name = document.getElementById("name").value;
-  var nameuser = document.getElementById("name-user").value;
-  */   
-
+  
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
   verificar()
