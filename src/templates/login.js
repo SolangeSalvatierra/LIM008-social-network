@@ -9,9 +9,9 @@ export const formIngresarCuenta = () => {
             <input id="password" type = "password" placeholder="Ingresa contraseña">
             <button type = "button" id="btn-acceder"> Acceder </button>
 
-            <button id="btn-google">Ingresa con google</button>
-            <button id="btn-facebook">Ingresa con faceboock</button>
-            <button id = "btn-registrarse">Registrarse</button>
+            <button type = "button" id="btn-google">Ingresa con google</button>
+            <button type = "button" id="btn-facebook">Ingresa con faceboock</button>
+            <button type= "button" id = "btn-registrarse">Registrarse</button>
 
             <div id= "contenido"></div>
     `;
@@ -23,6 +23,9 @@ export const formIngresarCuenta = () => {
     const btnAcceder = form.querySelector('#btn-acceder');
     btnAcceder.addEventListener('click', clickAcceder);
     const btnRegistrarse = form.querySelector('#btn-registrarse');
-    btnRegistrarse.addEventListener('click', formCrearCuenta);
+    btnRegistrarse.addEventListener('click', () => {
+        formCrearCuenta();
+        form.innerHTML = '';
+    } );
     return form;
 }

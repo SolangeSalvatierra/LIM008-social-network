@@ -1,4 +1,6 @@
 import {clickCrear} from "../view-controller.js";
+//no es necesario poner el .js
+// import {formIngresarCuenta} from "./login.js"
 
 export const formCrearCuenta = () => {
     const contenidoForm = `

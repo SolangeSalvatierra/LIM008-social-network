@@ -24,3 +24,18 @@ export const ingresarCuenta = () => {
   // ...
   });
   }
+
+  //
+  const verificar = () => {
+    let user = firebase.auth().currentUser;
+  
+    if (user) {
+    user.sendEmailVerification().then(() => {
+    // Email sent.
+    console.log("enviando correo...");  
+    }).catch((error) => {
+  // An error happened.
+  console.log(error);
+    });
+    }
+  }
