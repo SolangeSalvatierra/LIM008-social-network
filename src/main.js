@@ -1,32 +1,18 @@
 // Este es el punto de entrada de tu aplicacion
+import { initRouter } from "./router.js";
 
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle} from './lib/index.js';
- 
-const prueba = () => {
-  loginGoogle();
+const init = () => {
+  const config = {
+    apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
+    authDomain: "usuarios-28a17.firebaseapp.com",
+    databaseURL: "https://usuarios-28a17.firebaseio.com",
+    projectId: "usuarios-28a17",
+    storageBucket: "usuarios-28a17.appspot.com",
+    messagingSenderId: "436355716999"
+  };
+  firebase.initializeApp(config);
+  initRouter();
+  
 }
-document.getElementById("btn-google").addEventListener("click", prueba, false);
 
-import { loginFacebook } from './lib/index.js';
-const prueba2 = () => {
-  loginFacebook();
-}
-document.getElementById("btn-Facebook").addEventListener("click", prueba2, false);
-
-
-const btnRegistrar = document.getElementById('btn-registrar');
-const btnAcceder = document.getElementById('btn-acceder');
-
-btnRegistrar.addEventListener('click', () => {
-    registrar();
-});
-btnAcceder.addEventListener('click', () => {
-    acceder();
-    observador();
-    verificar();
-    aparecer();
-});
-
-cerrar();
-
-
+window.onload = init();

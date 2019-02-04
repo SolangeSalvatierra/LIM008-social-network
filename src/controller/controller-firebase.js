@@ -36,6 +36,7 @@ export const acceder = () => {
       console.log(error.message);
       // ...
     });
+    observador();
 }
 
 
@@ -66,7 +67,6 @@ export const observador = () => {
       }
     });
 }
-observador();
 
 export const aparecer = (user) => {
   const users = user;
@@ -114,7 +114,7 @@ export const loginGoogle = () => {
     // ...
   }).catch(function(error) {
     // Handle Errors here.
-    console.log (error);
+    // console.log (error);
     const errorCode = error.code;
     const errorMessage = error.message;
     // The email of the user's account used.
@@ -149,3 +149,21 @@ export const loginFacebook = () => {
   });
 }
 
+export const getNotes = (callback) =>
+  firebase.firestore().collection('notes')
+    .onSnapshot((querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() })
+      });
+      callback(data);
+    }); 
+    
+export const addNote = (textNewNote) =>
+    firebase.firestore().collection('notes').add({
+      title: textNewNote,
+      state: false
+    })
+  
+export const deleteNote = (idNote) =>
+    firebase.firestore().collection('notes').doc(idNote).delete()
