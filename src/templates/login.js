@@ -1,5 +1,5 @@
 import {clickAcceder, mostrarMuro} from "../view-controller.js";
-import { loginGoogle, loginFacebook } from "../lib/index.js";
+import { loginGoogle, loginFacebook } from "../controller/controller-firebase.js";
 //solo para probar que pase de un form a otro, ya que aun no uso el router
 import {formCrearCuenta} from "../templates/createAccount.js";
 //import {formCrearMuro} from "../templates/muro.js";

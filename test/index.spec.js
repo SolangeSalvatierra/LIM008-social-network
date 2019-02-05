@@ -14,7 +14,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 // iniciando tests
 
-import {crearCuenta} from"../src/lib/index.js";
+import {crearCuenta} from"../src/controller/controller-firebase.js";
 
 describe('list de notas', () => {
   it('Debería poder crear cuenta', () => {
