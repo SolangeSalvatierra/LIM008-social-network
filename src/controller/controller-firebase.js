@@ -23,11 +23,11 @@ console.log(error.message);
 });
 }
 
-export const acceder = () => {
-  const email = document.getElementById("email2").value;
-  const password = document.getElementById("password2").value;
+export const acceder = (email, password) => {
+  // const email = document.getElementById("email2").value;
+  // const password = document.getElementById("password2").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  return firebase.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
       // Handle Errors here.
       let errorCode = error.code;
@@ -36,7 +36,6 @@ export const acceder = () => {
       console.log(error.message);
       // ...
     });
-    observador();
 }
 
 

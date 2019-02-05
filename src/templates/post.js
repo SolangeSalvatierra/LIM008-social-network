@@ -16,6 +16,7 @@ const itemNote = (objNote) => {
 }
 
 export default (notes) => {
+  console.log(notes)
   const divContainer = document.createElement('div');
   const homeContent = `
     <!-- form add note -->

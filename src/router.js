@@ -18,11 +18,11 @@ const viewTmp = (routers) => {
   root.innerHTML = '';
   switch (router) {
     case 'post':
+    console.log("prueba de hash")
       getNotes((notes) => {
         root.innerHTML = '';        
         root.appendChild(Post(notes));  
       })
-    // root.innerHTML= "Se pudo";
       break;
     case 'signIn':
       root.appendChild(Login());
