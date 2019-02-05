@@ -6,16 +6,27 @@ import {formCrearCuenta} from "../templates/createAccount.js";
 
 export const formIngresarCuenta = () => {
     const contenidoForm = `
-            <h4> Ingreso de usuarios </h4>
-            <input id="email" type = "email" placeholder="Ingresa email">
-            <input id="password" type = "password" placeholder="Ingresa contraseña">
-            <button type = "button" id="btn-acceder"> Acceder </button>
-
-            <button type = "button" id="btn-google">Ingresa con google</button>
-            <button type = "button" id="btn-facebook">Ingresa con faceboock</button>
-            <button type= "button" id = "btn-registrarse">Registrarse</button>
-
+            <div   class="incia-sección">
+            <h4> Inicia Sección  </h4>
+            <input  class="text field" id="email" type = "email" placeholder="Ingresa email">
+            <input  class="text field" id="password" type = "password" placeholder="Ingresa contraseña">
+            <button class="login" type = "button" id="btn-acceder"> Iniciar Sección </button>
+            <div>
+                <label> O ingresa a través de:</label>
+                <img id="auth-fb" alt="ico-fb" class="ico-fb" src="https://i.ibb.co/NmxyWjL/ico-fb.png" />
+                <img id="auth-google" alt="ico-google" class="ico-google" src="https://i.ibb.co/xgLXQrr/ico-gg.png" />
+            </div>
+            <button class="button" type= "button" id = "btn-registrarse">Registrarse</button>
+            </div>
     `;
+
+
+     // <button class="button to login" type = "button" id="btn-google">Ingresa con google</button>
+            // <button class="button to login" type = "button" id="btn-facebook">Ingresa con faceboock</button>
+
+
+
+
     // const form = document.createElement('form');
     // form.setAttribute('id', 'login');
     const form = document.getElementById('login');
@@ -28,10 +39,10 @@ export const formIngresarCuenta = () => {
         mostrarMuro();
     });
 
-    const btnGoogle = form.querySelector('#btn-google');
+    const btnGoogle = form.querySelector('#auth-google');
     btnGoogle.addEventListener('click', loginGoogle);
 
-    const btnFacebook = form.querySelector('#btn-facebook');
+    const btnFacebook = form.querySelector('#auth-fb');
     btnFacebook.addEventListener('click', loginFacebook);
 
     const btnRegistrarse = form.querySelector('#btn-registrarse');

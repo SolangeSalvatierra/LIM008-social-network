@@ -5,9 +5,9 @@ export const clickAcceder = () => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     alert('probando si funciona el click acceder');
-    ingresarCuenta(email, password);
-    //   .then(() => changeHash('/home'))
-    //   .catch(() => {})
+    ingresarCuenta(email, password)
+      .then(() => changeHash('/home'))
+      .catch(() => {})
   }
 
   export const clickCrear = () => {

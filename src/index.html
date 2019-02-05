@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  
+  <title> Traveler </title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
   <script>
     // Initialize Firebase
-    var config = {
+    const config = {
       apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
       authDomain: "usuarios-28a17.firebaseapp.com",
       databaseURL: "https://usuarios-28a17.firebaseio.com",
@@ -20,12 +21,24 @@
     firebase.initializeApp(config);
   </script>
 </head>
+
 <body>
+  <header>
+      <a class="logo" href="#/">
+       <img src="ima/traveller.1.png"> 
+      </a>
+  </header>
     <div id="root">
-      <form id = "login"></form>
-      <form id = "newAccount"></form>
-      <form id = "muro"></form>
+      <form id = "login"> </form> 
+      <form id = "newAccount" > </form> 
+      <form id = "muro" ></form>
     </div>
+
+    <footer>
+        <div class="background color flex padding">
+            <p class="not-margin">Copyright</p>
+        </div>
+    </footer>
   <script type="module" src="main.js"></script>
 </body>
 </html>
