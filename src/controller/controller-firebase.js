@@ -16,11 +16,11 @@ console.log(error.message);
 });
 }
 
-export const acceder = () => {
-  const email = document.getElementById("email2").value;
-  const password = document.getElementById("password2").value;
+export const acceder = (email, password) => {
+  // const email = document.getElementById("email2").value;
+  // const password = document.getElementById("password2").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  return firebase.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
       // Handle Errors here.
       let errorCode = error.code;
@@ -59,7 +59,6 @@ export const observador = () => {
       }
     });
 }
-observador();
 
 export const aparecer = (user) => {
   const users = user;
@@ -107,7 +106,7 @@ export const loginGoogle = () => {
     // ...
   }).catch(function(error) {
     // Handle Errors here.
-    console.log (error);
+    // console.log (error);
     const errorCode = error.code;
     const errorMessage = error.message;
     // The email of the user's account used.
@@ -142,3 +141,21 @@ export const loginFacebook = () => {
   });
 }
 
+export const getNotes = (callback) =>
+  firebase.firestore().collection('notes')
+    .onSnapshot((querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() })
+      });
+      callback(data);
+    }); 
+    
+export const addNote = (textNewNote) =>
+    firebase.firestore().collection('notes').add({
+      title: textNewNote,
+      state: false
+    })
+  
+export const deleteNote = (idNote) =>
+    firebase.firestore().collection('notes').doc(idNote).delete()

@@ -1,9 +1,11 @@
+import Post from './templates/post.js';
 import Login from './templates/login.js';
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook } from "./lib/index.js";
+import { getNotes } from './controller/controller-firebase.js';
+
 const changeTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
     return viewTmp('#/signIn');
-  } else if (hash === '#/signIn' || hash === '#/home') {
+  } else if (hash === '#/signIn' || hash === '#/post') {
     return viewTmp(hash);
   } else {
     return viewTmp('#/signIn');
@@ -15,11 +17,18 @@ const viewTmp = (routers) => {
   const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
+    case 'post':
+    console.log("prueba de hash")
+      getNotes((notes) => {
+        root.innerHTML = '';        
+        root.appendChild(Post(notes));  
+      })
+      break;
     case 'signIn':
-      root.appendChild(acceder());
+      root.appendChild(Login());
       break;
     default:
-      root.appendChild(acceder());
+      root.appendChild(Login());
       break;
   }
 }

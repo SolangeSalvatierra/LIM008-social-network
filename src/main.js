@@ -1,7 +1,7 @@
+// Este es el punto de entrada de tu aplicacion
 import { initRouter } from "./router.js";
 
 const init = () => {
-  // Initialize Firebase
   const config = {
     apiKey: "AIzaSyAq4Nw0xlHrJJlb-txohnMEkHZzxOpkxCk",
     authDomain: "usuarios-28a17.firebaseapp.com",
@@ -12,7 +12,11 @@ const init = () => {
   };
   firebase.initializeApp(config);
   initRouter();
+  
+
+
 }
 
 window.onload = init();
 
+window.onload = init();
