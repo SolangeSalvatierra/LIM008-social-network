@@ -1,7 +1,7 @@
 import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
-
+import Create from "./templates/createAccount.js"
 const changeHash = (hash) =>  {
-    location.hash = hash;
+    location.hash = '#'+hash;
   }
   
 export const signInOnSubmit = () => {
@@ -11,6 +11,31 @@ export const signInOnSubmit = () => {
       .then(() => changeHash('/post'))
       .catch(() => {})
 }
+
+export const signInOnSubmitGoogle = () => {
+  loginGoogle()
+    .then(() => changeHash('/post'))
+    .catch(() => {})
+}
+
+export const signInOnSubmitFacebook = () => {
+  loginFacebook()
+    .then(() => changeHash('/post'))
+    .catch(() => {})
+}
+export const signInOnSubmitCreate = () => {
+  //  document.getElementById('root').append(Create())
+  // .then(() => changeHash('/create'))
+  // .catch(() => {})
+  changeHash('/create')
+}
+  // const email = document.querySelector('#email').value;
+  // const password = document.querySelector('#password').value;
+  // registrar(email, password)
+  //   .then(() => changeHash('/create'))
+  //   .catch(() => {})
+
+
   
 export const addNoteOnSubmit = (event) => {
     event.preventDefault();

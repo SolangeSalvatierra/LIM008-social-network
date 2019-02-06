@@ -1,11 +1,14 @@
 import Post from './templates/post.js';
 import Login from './templates/login.js';
+import Create from './templates/login.js';
+
 import { getNotes } from './controller/controller-firebase.js';
 
 const changeTmp = (hash) => {
+  console.log('debtro de changetnp', hash)
   if (hash === '#/' || hash === '' || hash === '#') {
     return viewTmp('#/signIn');
-  } else if (hash === '#/signIn' || hash === '#/post') {
+  } else if (hash === '#/signIn' || hash === '#/post' || hash === '#/create') {
     return viewTmp(hash);
   } else {
     return viewTmp('#/signIn');
@@ -27,7 +30,10 @@ const viewTmp = (routers) => {
     case 'signIn':
       root.appendChild(Login());
       break;
-    default:
+      case 'create':
+      root.appendChild(Create());
+      break;
+      default:
       root.appendChild(Login());
       break;
   }

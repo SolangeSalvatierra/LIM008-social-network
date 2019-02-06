@@ -1,14 +1,14 @@
 // aqui exportaras las funciones que necesites
 
-export const registrar = () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+export const registrar = (email, password) => {
+  // const email = document.getElementById("email").value;
+  // const password = document.getElementById("password").value;
   /*var nameuser = document.getElementById("name-user").value;
   var name = document.getElementById("name").value;
   var nameuser = document.getElementById("name-user").value;
   */   
 
-firebase.auth().createUserWithEmailAndPassword(email, password)
+return firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
   verificar()
 })
@@ -104,7 +104,7 @@ console.log(error);
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  return firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
     // The signed-in user info.
@@ -127,7 +127,7 @@ export const loginGoogle = () => {
 export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   provider.addScope('publish_pages');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  return firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
    const token = result.credential.accessToken;
     // The signed-in user info.
