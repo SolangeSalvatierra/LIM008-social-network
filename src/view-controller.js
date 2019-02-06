@@ -1,5 +1,5 @@
 import {ingresarCuenta, crearCuenta, cerrar, aparecer,verificar,addNote,deleteNote} from "./controller/controller-firebase.js";
-import { formCrearMuro } from "./templates/muro.js";
+import muro from "./templates/muro.js";
 
 const changeHash = (hash) => {
   location.hash = hash;
@@ -29,9 +29,26 @@ export const clickAcceder = () => {
 
   export const mostrarMuro = () => {
     if(aparecer){
-      formCrearMuro();
+      muro();
     }else {
       alert("incorrecto");
     }
   }
+
+  export const addNoteOnSubmit = (event) => {
+    event.preventDefault();
+    const input = document.getElementById('input-new-note');
+   
+    addNote(input.value)
+      .then(() => {
+        input.value = '';
+        data.message = 'Nota agregada'
+      }).catch(() => {
+        input.value = '';
+        data.message = 'Lo sentimos, no se pudo agregar la nota';
+      });
+}
+
+export const deleteNoteOnClick = (objNote) =>
+  deleteNote(objNote.id)
 

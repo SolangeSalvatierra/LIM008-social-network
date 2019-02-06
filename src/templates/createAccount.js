@@ -2,14 +2,14 @@ import {clickCrear} from "../view-controller.js";
 //no es necesario poner el .js
 // import {formIngresarCuenta} from "./login.js"
 
-export const formCrearCuenta = () => {
-    const contenidoForm = `
-            <h4> Registrate para ver fotos y conocer nuevos lugares  </h4>
-            <input id="email" type = "email" placeholder="Ingresa email">
-            <!-- <input id="name" type = "name" placeholder="Nombre Completo"> 
-            <input id="name-user" type = "name-user" placeholder="Nombre de Usuario"> -->
-            <input id="password" type = "password" placeholder="Ingresa contraseña">
-            <button type = "button" id="btn-crear"> Registrar </button>
+export  const  formCrearCuenta  = () => {
+    const  contenidoForm  =  `
+            <h4> Registro de usuarios </h4>
+            <input id = "email" type = "email" placeholder = "Ingresa email">
+            <! - <input id = "name" type = "name" placeholder = "Nombre Completo"> 
+            <input id = "nombre-usuario" tipo = "nombre-usuario" placeholder = "Nombre de Usuario"> ->
+            <input id = "password" type = "password" placeholder = "Ingresa contraseña">
+            <button type = "button" id = "btn-crear"> Crear / Registrar </button>
             
     `;
     // const form = document.createElement('form');

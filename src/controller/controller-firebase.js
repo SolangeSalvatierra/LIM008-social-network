@@ -1,6 +1,4 @@
 
-import { formCrearMuro } from "../templates/muro.js";
-
 export const ingresarCuenta = (email, password) => 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {

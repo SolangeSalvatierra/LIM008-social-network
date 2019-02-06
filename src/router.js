@@ -1,11 +1,11 @@
-import Post from './templates/muro';
 import Login from './templates/login.js';
 import { getNotes } from './controller/controller-firebase.js';
+import muro from './templates/muro';
 
 const changeTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
     return viewTmp('#/signIn');
-  } else if (hash === '#/signIn' || hash === '#/post') {
+  } else if (hash === '#/signIn' || hash === '#/muro') {
     return viewTmp(hash);
   } else {
     return viewTmp('#/signIn');
@@ -17,11 +17,11 @@ const viewTmp = (routers) => {
   const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
-    case 'post':
+    case 'muro':
     console.log("prueba de hash")
       getNotes((notes) => {
         root.innerHTML = '';        
-        root.appendChild(Post(notes));  
+        root.appendChild(muro(notes));  
       })
       break;
     case 'signIn':
