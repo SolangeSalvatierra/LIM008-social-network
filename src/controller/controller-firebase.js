@@ -166,3 +166,31 @@ export const addNote = (textNewNote) =>
   
 export const deleteNote = (idNote) =>
     firebase.firestore().collection('notes').doc(idNote).delete()
+
+export const editionNote = (idNote, title) =>{
+  document.getElementById("input-new-note").value = title;
+  // const button = document.getElementById("btn-add-note");
+  // button.innerHTML= "Editar";
+  const btnEdition = document.createElement("button");
+  btnEdition.setAttribute("id", "btn-edition");
+  document.getElementById("muro-post").appendChild(btnEdition);
+
+  btnEdition.addEventListener("click", () => {
+    var washingtonRef = firebase.firestore().collection("notes").doc(idNote);
+    const newPost = document.getElementById("input-new-note").value;
+    // Set the "capital" field of the city 'DC'
+    return washingtonRef.update({
+     title: newPost
+    })
+    .then(function() {
+       console.log("Document successfully updated!");
+       document.getElementById("input-new-note").value = "";
+
+
+    })
+    .catch(function(error) {
+    // The document probably doesn't exist.
+       console.error("Error updating document: ", error);
+    });
+  });
+}

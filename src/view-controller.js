@@ -1,12 +1,12 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
+import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote, editionNote} from './controller/controller-firebase.js';
 import Create from "./templates/createAccount.js"
 const changeHash = (hash) =>  {
     location.hash = '#'+hash;
   }
   
 export const signInOnSubmit = () => {
-    const email = document.querySelector('#email2').value;
-    const password = document.querySelector('#password2').value;
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
     acceder(email, password)
       .then(() => changeHash('/post'))
       .catch(() => {})
@@ -29,13 +29,6 @@ export const signInOnSubmitCreate = () => {
   // .catch(() => {})
   changeHash('/create')
 }
-  // const email = document.querySelector('#email').value;
-  // const password = document.querySelector('#password').value;
-  // registrar(email, password)
-  //   .then(() => changeHash('/create'))
-  //   .catch(() => {})
-
-
   
 export const addNoteOnSubmit = (event) => {
     event.preventDefault();
@@ -53,3 +46,6 @@ export const addNoteOnSubmit = (event) => {
 
 export const deleteNoteOnClick = (objNote) =>
   deleteNote(objNote.id)
+
+export const editionNoteOnClick = (objNote) =>
+editionNote(objNote.id, objNote.title)

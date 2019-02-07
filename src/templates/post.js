@@ -1,4 +1,4 @@
-import { addNoteOnSubmit, deleteNoteOnClick } from "../view-controller.js";
+import { addNoteOnSubmit, deleteNoteOnClick, editionNoteOnClick } from "../view-controller.js";
 
 const itemNote = (objNote) => {
   const liElement = document.createElement('li');
@@ -7,11 +7,15 @@ const itemNote = (objNote) => {
       <span>${objNote.title}</span>
     </span>
     <button id="btn-deleted-${objNote.id}">Eliminar
+    <button id="btn-edition-${objNote.id}">Editar
       </button>
   `;
   // agregando evento de click al btn eliminar una nota
   liElement.querySelector(`#btn-deleted-${objNote.id}`)
     .addEventListener('click', () => deleteNoteOnClick(objNote));
+
+    liElement.querySelector(`#btn-edition-${objNote.id}`)
+    .addEventListener('click', () => editionNoteOnClick(objNote));
   return liElement;
 }
 
@@ -21,16 +25,12 @@ export default (notes) => {
   const homeContent = `
     <!-- form add note -->
     <form>
-      <div>
+      <div id = "muro-post">
         <input type="text" id="input-new-note">
         <label for="input-new-note">Agrega una nota...</label>
       </div>
-      <button id="btn-add-note">
+      <button id="btn-add-note">Guardar
       </button>
-      <div id="demo-snackbar-example">
-        <div></div>
-        <button type="button"></button>
-      </div>
     </form>
     <!-- notes -->
     <section>
