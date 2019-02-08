@@ -14,11 +14,11 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 // iniciando tests
 
-import {crearCuenta} from"../src/controller/controller-firebase.js";
+import {registrar} from"../src/controller/controller-firebase.js";
 
 describe('list de notas', () => {
   it('Debería poder crear cuenta', () => {
-    return  crearCuenta ('elexisfer.18@gmail.com','000000')
+    return  registrar ('elexisfer.18@gmail.com','000000')
       .then((user) => {
        expect(user.email).toBe('elexisfer.18@gmail.com')
       })

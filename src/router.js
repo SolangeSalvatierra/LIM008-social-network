@@ -1,14 +1,16 @@
 import Login from './templates/login.js';
+import Create from './templates/createAccount.js';
+import Post from './templates/post.js';
 import { getNotes } from './controller/controller-firebase.js';
-import muro from './templates/muro';
 
 const changeTmp = (hash) => {
+  console.log('dentro de changetnp', hash)
   if (hash === '#/' || hash === '' || hash === '#') {
-    return viewTmp('#/signIn');
-  } else if (hash === '#/signIn' || hash === '#/muro') {
+    return viewTmp('#/login');
+  } else if (hash === '#/login' || hash === '#/post' || hash === '#/create') {
     return viewTmp(hash);
   } else {
-    return viewTmp('#/signIn');
+    return viewTmp('#/login');
   }
 }
 
@@ -17,17 +19,21 @@ const viewTmp = (routers) => {
   const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
-    case 'muro':
+    
+    case 'login':
+      root.appendChild(Login());
+      break;
+      case 'create':
+      root.appendChild(Create());
+      break;
+      case 'post':
     console.log("prueba de hash")
       getNotes((notes) => {
         root.innerHTML = '';        
-        root.appendChild(muro(notes));  
+        root.appendChild(Post(notes));  
       })
       break;
-    case 'signIn':
-      root.appendChild(Login());
-      break;
-    default:
+      default:
       root.appendChild(Login());
       break;
   }

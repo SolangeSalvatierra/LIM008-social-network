@@ -1,41 +1,38 @@
-import {ingresarCuenta, crearCuenta, cerrar, aparecer,verificar,addNote,deleteNote} from "./controller/controller-firebase.js";
-import muro from "./templates/muro.js";
+import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
 
-const changeHash = (hash) => {
-  location.hash = hash;
-}
+export const changeHash = (hash) =>  {
+    location.hash = hash;
+  }
 
-  export const clickCrear = () => {
+  export const signInOnSubmitCreate = () => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    alert('probando si funciona el click crear');
-    crearCuenta(email, password)
-    .then(() => changeHash('/muro'))
-    .catch(() => {})
-    verificar() 
-}
-
-export const clickAcceder = () => {
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
-  alert('probando si funciona el click acceder');
-  ingresarCuenta(email, password)
-    .then(() => changeHash('/muro'))
-    .catch(() => {})
-}
-  export const clickCerrar = () => {
-    cerrar();
+    registrar(email, password)
+      .then(() => changeHash('/post'))
+      .catch(() => {})
   }
 
-  export const mostrarMuro = () => {
-    if(aparecer){
-      muro();
-    }else {
-      alert("incorrecto");
-    }
-  }
+export const signInOnSubmit = () => {
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    acceder(email, password)
+      .then(() => changeHash('/post'))
+      .catch(() => {})
+}
 
-  export const addNoteOnSubmit = (event) => {
+export const signInOnSubmitGoogle = () => {
+  loginGoogle()
+    .then(() => changeHash('/post'))
+    .catch(() => {})
+}
+
+export const signInOnSubmitFacebook = () => {
+  loginFacebook()
+    .then(() => changeHash('/post'))
+    .catch(() => {})
+}
+
+export const addNoteOnSubmit = (event) => {
     event.preventDefault();
     const input = document.getElementById('input-new-note');
    
@@ -52,3 +49,9 @@ export const clickAcceder = () => {
 export const deleteNoteOnClick = (objNote) =>
   deleteNote(objNote.id)
 
+
+export const cerrarSesionONClick = () => {
+  cerrar()
+  .then(() => changeHash(''))
+  .catch(err => console.log('Error logout', err));
+}
