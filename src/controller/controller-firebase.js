@@ -1,47 +1,15 @@
 // aqui exportaras las funciones que necesites
 
 export const registrar = (email, password) => {
-  // const email = document.getElementById("email").value;
-  // const password = document.getElementById("password").value;
-  /*var nameuser = document.getElementById("name-user").value;
-  var name = document.getElementById("name").value;
-  var nameuser = document.getElementById("name-user").value;
-  */   
-
 return firebase.auth().createUserWithEmailAndPassword(email, password)
-.then(() =>{
-  verificar()
-})
-
-.catch((error) => {
-// Handle Errors here.
-let errorCode = error.code;
-let errorMessage = error.message;
-console.log(error.code);
-console.log(error.message);
-// ...
-});
 }
 
 export const acceder = (email, password) => {
-  // const email = document.getElementById("email2").value;
-  // const password = document.getElementById("password2").value;
-
   return firebase.auth().signInWithEmailAndPassword(email, password)
-  .catch((error) => {
-      // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      console.log(error.code);
-      console.log(error.message);
-      // ...
-    });
 }
 
-
-
-export const observador = () => {
-  firebase.auth().onAuthStateChanged((user) => {
+export const observador = (user) => {
+   return firebase.auth().onAuthStateChanged((user) => {
       if (user) {
           console.log ("existe usuario activo")
           aparecer(user);
@@ -76,16 +44,6 @@ export const aparecer = (user) => {
       <button onclick="cerrar()"> Cerrar Sesión </button>
       `;
   } 
-}
-
-export const cerrar = () => {
-  firebase.auth().signOut()
-  .then(() => {
-      console.log("saliendo...")
-  })
-  .catch((error) => {
-      console.log(error)
-  })
 }
 
 export const verificar = () => {
@@ -149,7 +107,7 @@ export const loginFacebook = () => {
 }
 
 export const getNotes = (callback) =>
-  firebase.firestore().collection('notes')
+  firebase.firestore().collection('post')
     .onSnapshot((querySnapshot) => {
       const data = [];
       querySnapshot.forEach((doc) => {
@@ -158,39 +116,16 @@ export const getNotes = (callback) =>
       callback(data);
     }); 
     
-export const addNote = (textNewNote) =>
-    firebase.firestore().collection('notes').add({
+export const addNote = (textNewNote) => {
+    return firebase.firestore().collection('post').add({
       title: textNewNote,
       state: false
     })
+  }
   
 export const deleteNote = (idNote) =>
-    firebase.firestore().collection('notes').doc(idNote).delete()
+    firebase.firestore().collection('post').doc(idNote).delete()
 
-export const editionNote = (idNote, title) =>{
-  document.getElementById("input-new-note").value = title;
-  // const button = document.getElementById("btn-add-note");
-  // button.innerHTML= "Editar";
-  const btnEdition = document.createElement("button");
-  btnEdition.setAttribute("id", "btn-edition");
-  document.getElementById("muro-post").appendChild(btnEdition);
-
-  btnEdition.addEventListener("click", () => {
-    var washingtonRef = firebase.firestore().collection("notes").doc(idNote);
-    const newPost = document.getElementById("input-new-note").value;
-    // Set the "capital" field of the city 'DC'
-    return washingtonRef.update({
-     title: newPost
-    })
-    .then(function() {
-       console.log("Document successfully updated!");
-       document.getElementById("input-new-note").value = "";
-
-
-    })
-    .catch(function(error) {
-    // The document probably doesn't exist.
-       console.error("Error updating document: ", error);
-    });
-  });
-}
+    export const cerrar = () => 
+      firebase.auth().signOut()
+      

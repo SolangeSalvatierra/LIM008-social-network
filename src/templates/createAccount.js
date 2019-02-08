@@ -5,13 +5,12 @@ import {signInOnSubmitCreate} from "../view-controller.js";
 export  default () => {
     const form = document.createElement('form');
     const  contenidoForm  =  `
+    <div class='resgister'>
             <h4> Registro de usuarios </h4>
-            <input id = "email" type = "email" placeholder = "Ingresa email">
-            <! - <input id = "name" type = "name" placeholder = "Nombre Completo"> 
-            <input id = "nombre-usuario" tipo = "nombre-usuario" placeholder = "Nombre de Usuario"> ->
-            <input id = "password" type = "password" placeholder = "Ingresa contraseña">
-            <button type = "button" id = "btn-crear"> Crear / Registrar </button>
-            
+            <input id = "email" type = "email" placeholder = "Correo">
+            <input id = "password" type = "password" placeholder = "Contraseña">
+            <button type = "button" id = "btn-crear"> Registrate </button>
+    </div>
     `;
     // const form = document.createElement('form');
     // form.setAttribute('id', 'login');
@@ -19,7 +18,5 @@ export  default () => {
     // El querySelector hace en este caso la función del "document.getElementById"
     const btnAcceder = form.querySelector('#btn-crear');
     btnAcceder.addEventListener('click', signInOnSubmitCreate);
-    
-
     return form;
 }

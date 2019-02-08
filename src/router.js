@@ -1,17 +1,16 @@
-import Post from './templates/post.js';
 import Login from './templates/login.js';
-import Create from './templates/login.js';
-
+import Create from './templates/createAccount.js';
+import Post from './templates/post.js';
 import { getNotes } from './controller/controller-firebase.js';
 
 const changeTmp = (hash) => {
-  console.log('debtro de changetnp', hash)
+  console.log('dentro de changetnp', hash)
   if (hash === '#/' || hash === '' || hash === '#') {
-    return viewTmp('#/signIn');
-  } else if (hash === '#/signIn' || hash === '#/post' || hash === '#/create') {
+    return viewTmp('#/login');
+  } else if (hash === '#/login' || hash === '#/post' || hash === '#/create') {
     return viewTmp(hash);
   } else {
-    return viewTmp('#/signIn');
+    return viewTmp('#/login');
   }
 }
 
@@ -20,18 +19,19 @@ const viewTmp = (routers) => {
   const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
-    case 'post':
+    
+    case 'login':
+      root.appendChild(Login());
+      break;
+      case 'create':
+      root.appendChild(Create());
+      break;
+      case 'post':
     console.log("prueba de hash")
       getNotes((notes) => {
         root.innerHTML = '';        
         root.appendChild(Post(notes));  
       })
-      break;
-    case 'signIn':
-      root.appendChild(Login());
-      break;
-      case 'create':
-      root.appendChild(Create());
       break;
       default:
       root.appendChild(Login());
