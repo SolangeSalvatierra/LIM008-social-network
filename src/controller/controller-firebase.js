@@ -119,13 +119,56 @@ export const getNotes = (callback) =>
 export const addNote = (textNewNote) => {
     return firebase.firestore().collection('post').add({
       title: textNewNote,
-      state: false
+      state: false,
+      likePost: 0
     })
   }
   
 export const deleteNote = (idNote) =>
     firebase.firestore().collection('post').doc(idNote).delete()
 
-    export const cerrar = () => 
-      firebase.auth().signOut()
+export const cerrar = () => 
+   firebase.auth().signOut()
       
+export const editionNote = (idNote, title) =>{	 
+    // document.getElementById("input-new-note").value = title;	   
+    const button = document.getElementById(`btn-edition-${idNote}`);	
+    button.innerHTML= "Guardar";	
+  //  const btnEdition = document.createElement("button");	
+  //     btnEdition.setAttribute("id", "btn-edition");	
+  //     document.getElementById("muro-post").appendChild(btnEdition);	
+      
+     button.addEventListener("click", () => {	
+          const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
+          const newPost = document.getElementById(`text-${idNote}`).value;	
+          // Set the "capital" field of the city 'DC'	
+          return washingtonRef.update({	
+           title: newPost	
+          })	
+          .then(function() {	
+            button.innerHTML = 'Editar'
+             console.log("Document successfully updated!");	      
+           })	
+          .catch(function(error) {	
+          // The document probably doesn't exist.	
+             console.error("Error updating document: ", error);	
+          });	
+     });	
+}
+
+export const likeCountShow = (idNote, objNote) => {
+  const likeCount = objNote.likePost + 1;
+  const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
+  document.getElementById(`btn-count-${objNote.id}`).value = likeCount;
+  return washingtonRef.update({	
+    likePost: likeCount
+   })	
+   .then(function() {	
+      console.log("Document successfully updated!");	      
+    })	
+   .catch(function(error) {	
+   // The document probably doesn't exist.	
+      console.error("Error updating document: ", error);	
+   });	
+
+}
