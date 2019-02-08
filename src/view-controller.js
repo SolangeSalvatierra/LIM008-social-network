@@ -1,4 +1,4 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
+import { registrar, acceder, observador, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
 
 export const changeHash = (hash) =>  {
     location.hash = hash;
