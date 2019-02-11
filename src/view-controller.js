@@ -46,10 +46,11 @@ export const addNoteOnSubmit = (event) => {
 }
 
 export const deleteNoteOnSubmit = (objNote) =>{
-  deleteNoteOnClick(objNote.id);
-  
+  if(confirm('¿Está seguro que quiere eliminar este post?')){
+    deleteNoteOnClick(objNote.id);    
+  }  
 }
-  // deleteNoteOnClick(objNote.id)
+  
 
 
 
