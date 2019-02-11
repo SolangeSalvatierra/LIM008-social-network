@@ -1,4 +1,4 @@
-import { addNoteOnSubmit, deleteNoteOnClick,cerrarSesionONClick, editionNoteOnClick, likeClick} from "../view-controller.js";
+import { addNoteOnSubmit, deleteNoteOnSubmit,cerrarSesionONClick, editionNoteOnClick, likeClick} from "../view-controller.js";
 
 const itemNote = (objNote) => {
   const liElement = document.createElement('div');
@@ -14,7 +14,7 @@ const itemNote = (objNote) => {
   `;
   // agregando evento de click al btn eliminar una nota
   liElement.querySelector(`#btn-deleted-${objNote.id}`)
-    .addEventListener('click', () => deleteNoteOnClick(objNote));
+    .addEventListener('click', () => deleteNoteOnSubmit(objNote));
   liElement.querySelector(`#btn-edition-${objNote.id}`)	
     .addEventListener('click', () => editionNoteOnClick(objNote));
   liElement.querySelector(`#btn-like-${objNote.id}`)	

@@ -1,4 +1,4 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote, editionNote, likeCountShow} from './controller/controller-firebase.js';
+import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNoteOnClick, editionNote, likeCountShow} from './controller/controller-firebase.js';
 
 export const changeHash = (hash) =>  {
     location.hash = hash;
@@ -45,8 +45,12 @@ export const addNoteOnSubmit = (event) => {
       });
 }
 
-export const deleteNoteOnClick = (objNote) =>
-  deleteNote(objNote.id)
+export const deleteNoteOnSubmit = (objNote) =>{
+  deleteNoteOnClick(objNote.id);
+  
+}
+  // deleteNoteOnClick(objNote.id)
+
 
 
 export const cerrarSesionONClick = () => {

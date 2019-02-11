@@ -124,8 +124,57 @@ export const addNote = (textNewNote) => {
     })
   }
   
-export const deleteNote = (idNote) =>
-    firebase.firestore().collection('post').doc(idNote).delete()
+// export const deleteNote = (idNote) =>
+//     firebase.firestore().collection('post').doc(idNote).delete()
+
+export const deleteNoteOnClick = (idNote) => {
+  console.log('pendiente...');
+  swal({    
+    title: 'Eliminar post',
+    text: '¿Quiere eliminar este post?',
+    type: 'warning',
+    showCancelButton: true,
+    closeOnConfirm: false,
+    confirmButtonText: 'Sí, borrarlo',
+    confirmButtonColor: '#ec6c62',
+    cancelButtonColor: '#d33'
+  })
+  .then(() => {
+    firebase.firestore().collection('post').doc(idNote).delete();
+  })
+  .catch(() => {
+    swal({
+      confirmButtonText: 'Aceptar',
+      type: 'error',
+      title: 'Upss',
+      text: 'No se pudo eliminar el post'
+    });
+  });  
+
+  
+  // swal({
+  //   title: "Are you sure?",
+  //   text: "Once deleted, you will not be able to recover this post!",
+  //   icon: "warning",
+  //   buttons: true,
+  //   dangerMode: true,
+  // })
+  // .then((willDelete) => {
+  //   if (willDelete) {
+  //     firebase.firestore().collection('post').doc(idNote).delete();
+  //     swal("Poof! Your imaginary file has been deleted!", {        
+  //       icon: "success",
+  //     });
+  //   } else {
+  //     swal("Your imaginary post is safe!");
+  //   }
+  // });
+
+}
+
+// export const deleteNoteOnClick = (idNote) => deleteNote(idNote);
+
+/////////////////////////////////////////
 
 export const cerrar = () => 
    firebase.auth().signOut()
