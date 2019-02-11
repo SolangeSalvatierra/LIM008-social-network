@@ -28,9 +28,9 @@ const viewTmp = (routers) => {
       break;
       case 'post':
     console.log("prueba de hash")
-      getNotes((notes) => {
+      getNotes((post) => {
         root.innerHTML = '';        
-        root.appendChild(Post(notes));  
+        root.appendChild(Post(post));  
       })
       break;
       default:

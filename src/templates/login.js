@@ -5,8 +5,8 @@ export default () => {
   const formContent = `
   <div   class="incia-sección">
   <h4> Inicia Sección  </h4>
-  <input  class="text field" id="email" type = "email" placeholder="Ingresa email">
-  <input  class="text field" id="password" type = "password" placeholder="Ingresa contraseña">
+  <input  class="text field imput" id="email" type = "email" placeholder="Ingresa email">
+  <input  class="text field imput" id="password" type = "password" placeholder="Ingresa contraseña">
   <button class="login" type = "button" id="btn-acceder"> Iniciar Sección </button>
   <div>
       <label> O ingresa a través de:</label>

@@ -56,7 +56,7 @@ export const cerrarSesionONClick = () => {
 }
 
 export const editionNoteOnClick = (objNote) =>	
- editionNote(objNote.id, objNote.title) 
+ editionNote(objNote) 
 
 export const likeClick = (objNote) => 
   likeCountShow (objNote.id, objNote)

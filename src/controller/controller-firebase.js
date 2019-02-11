@@ -130,23 +130,27 @@ export const deleteNote = (idNote) =>
 export const cerrar = () => 
    firebase.auth().signOut()
       
-export const editionNote = (idNote, title) =>{	 
-    // document.getElementById("input-new-note").value = title;	   
-    const button = document.getElementById(`btn-edition-${idNote}`);	
-    button.innerHTML= "Guardar";	
+export const editionNote = (objNote) =>{	 
+  document.getElementById(objNote.id).innerHTML=`
+    <input id ="text2-${objNote.id}" ></input>
+    
+`
+    const button = document.getElementById(`btn-edition-${objNote.id}`);	
+    const spaGuardar = document.getElementById(`span-${objNote.id}`)
+    spaGuardar.innerHTML= "Guardar";	
   //  const btnEdition = document.createElement("button");	
   //     btnEdition.setAttribute("id", "btn-edition");	
   //     document.getElementById("muro-post").appendChild(btnEdition);	
       
      button.addEventListener("click", () => {	
-          const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
-          const newPost = document.getElementById(`text-${idNote}`).value;	
+          const washingtonRef = firebase.firestore().collection("post").doc(objNote.id);	
+          const newPost = document.getElementById(`text2-${objNote.id}`).value;	
           // Set the "capital" field of the city 'DC'	
           return washingtonRef.update({	
            title: newPost	
           })	
           .then(function() {	
-            button.innerHTML = 'Editar'
+            spaGuardar.innerHTML = 'Editar'
              console.log("Document successfully updated!");	      
            })	
           .catch(function(error) {	

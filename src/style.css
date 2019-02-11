@@ -52,7 +52,7 @@ border-radius: 20px;
     align-items:flex-start;
 }
 
-input {
+.field {
     background-color: rgba(80, 203, 220, 0.54);
     border-radius: 6px;
 }
@@ -63,7 +63,7 @@ input {
     border-radius: 4px;
 }
 
-.ico-fb, .ico-google {
+.ico-fb, .ico-google, .ico-heart, .ico-edition, .ico-delete {
     width: 25px;
     height: 25px;
 }
@@ -83,3 +83,28 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#notes-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contend-post{
+    font: 1em sans-serif;
+    width: 600px;
+    height: 150px;
+    background: floralwhite;
+    margin: 20px;
+    padding: 20px
+}
+.post-title{
+    height: 75%;
+}
+
+.post-button{
+   margin: 10px;
+}
+
+
