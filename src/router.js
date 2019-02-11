@@ -1,7 +1,7 @@
 import Login from './templates/login.js';
 import Create from './templates/createAccount.js';
 import Post from './templates/post.js';
-import { getNotes } from './controller/controller-firebase.js';
+import { getPosts } from './controller/controller-firebase.js';
 
 const changeTmp = (hash) => {
   console.log('dentro de changetnp', hash)
@@ -28,9 +28,9 @@ const viewTmp = (routers) => {
       break;
       case 'post':
     console.log("prueba de hash")
-      getNotes((notes) => {
+      getPosts((posts) => {
         root.innerHTML = '';        
-        root.appendChild(Post(notes));  
+        root.appendChild(Post(posts));  
       })
       break;
       default:

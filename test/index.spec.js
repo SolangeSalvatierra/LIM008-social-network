@@ -16,7 +16,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 import {registrar} from"../src/controller/controller-firebase.js";
 
-describe('list de notas', () => {
+describe('lista', () => {
   it('Debería poder crear cuenta', () => {
     return  registrar ('elexisfer.18@gmail.com','000000')
       .then((user) => {
@@ -24,3 +24,4 @@ describe('list de notas', () => {
       })
   });
 })
+

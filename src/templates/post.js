@@ -1,54 +1,54 @@
-import { addNoteOnSubmit, deleteNoteOnSubmit,cerrarSesionONClick, editionNoteOnClick, likeClick} from "../view-controller.js";
+import { addPostOnSubmit, deletePostOnSubmit, cerrarSesionONClick, editionPostOnClick, likeClick} from "../view-controller.js";
 
-const itemNote = (objNote) => {
+const itemPost = (objPost) => {
   const liElement = document.createElement('div');
   liElement.innerHTML = `
     <span>
-      <textarea id ="text-${objNote.id}" >${objNote.title}</textarea>
+      <textarea id ="text-${objPost.id}" >${objPost.title}</textarea>
     </span>
-    <button id="btn-deleted-${objNote.id}">Eliminar</button>
-    <button id="btn-edition-${objNote.id}">Editar</button>
-    <button id="btn-like-${objNote.id}">Me gusta</button>
-    <span id="btn-count-${objNote.id}">${objNote.likePost}</span>
+    <button id="btn-deleted-${objPost.id}">Eliminar</button>
+    <button id="btn-edition-${objPost.id}">Editar</button>
+    <button id="btn-like-${objPost.id}">Me gusta</button>
+    <span id="btn-count-${objPost.id}">${objPost.likePost}</span>
 
   `;
   // agregando evento de click al btn eliminar una nota
-  liElement.querySelector(`#btn-deleted-${objNote.id}`)
-    .addEventListener('click', () => deleteNoteOnSubmit(objNote));
-  liElement.querySelector(`#btn-edition-${objNote.id}`)	
-    .addEventListener('click', () => editionNoteOnClick(objNote));
-  liElement.querySelector(`#btn-like-${objNote.id}`)	
-    .addEventListener('click', () => likeClick(objNote));
+  liElement.querySelector(`#btn-deleted-${objPost.id}`)
+    .addEventListener('click', () => deletePostOnSubmit(objPost));
+  liElement.querySelector(`#btn-edition-${objPost.id}`)	
+    .addEventListener('click', () => editionPostOnClick(objPost));
+  liElement.querySelector(`#btn-like-${objPost.id}`)	
+    .addEventListener('click', () => likeClick(objPost));
   return liElement;
 }
 
-export default (notes) => {
-  console.log(notes)
+export default (posts) => {
+  console.log(posts)
   const divContainer = document.createElement('div');
   const homeContent = `
-    <!-- form add note -->
+    <!-- form add post -->
     <form>
       <div id ="muro-post">
-        <textarea id="input-new-note" placeholder = "Agrega post" ></textarea>
+        <textarea id="input-new-post" placeholder = "Agrega post" ></textarea>
       </div>
-      <button id="btn-add-note">Publicar
+      <button id="btn-add-post">Publicar
       </button>
     </form>
-    <!-- notes -->
+    <!-- posts -->
     <section>
-      <div id="notes-list">
+      <div id="posts-list">
       </div>
     </section>
     <button type = "button" id = "btn-cerrar-sesion"> Cerrar Sesión </button>
   `;
 
   divContainer.innerHTML = homeContent;
-  const buttonAddNote = divContainer.querySelector('#btn-add-note');
-  const ul = divContainer.querySelector('#notes-list');
-  notes.forEach(note => {
-    ul.appendChild(itemNote(note));
+  const buttonAddPost = divContainer.querySelector('#btn-add-post');
+  const ul = divContainer.querySelector('#posts-list');
+  posts.forEach(post => {
+    ul.appendChild(itemPost(post));
   });
-  buttonAddNote.addEventListener('click', addNoteOnSubmit);
+  buttonAddPost.addEventListener('click', addPostOnSubmit);
 
   const btnCerrarSesion = divContainer.querySelector('#btn-cerrar-sesion');
     btnCerrarSesion.addEventListener('click',cerrarSesionONClick);

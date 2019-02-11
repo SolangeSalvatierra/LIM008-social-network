@@ -106,7 +106,7 @@ export const loginFacebook = () => {
   });
 }
 
-export const getNotes = (callback) =>
+export const getPosts = (callback) =>{
   firebase.firestore().collection('post')
     .onSnapshot((querySnapshot) => {
       const data = [];
@@ -115,35 +115,34 @@ export const getNotes = (callback) =>
       });
       callback(data);
     }); 
+}
     
-export const addNote = (textNewNote) => {
+export const addPost = (textNewPost) => {
     return firebase.firestore().collection('post').add({
-      title: textNewNote,
+      title: textNewPost,
       state: false,
       likePost: 0
     })
   }
   
-export const deleteNoteOnClick = (idNote) => {
-  firebase.firestore().collection('post').doc(idNote).delete()
+export const deletePostOnClick = (idPost) => {
+  return firebase.firestore().collection('post').doc(idPost).delete()
 }
-
-/////////////////////////////////////////
 
 export const cerrar = () => 
    firebase.auth().signOut()
       
-export const editionNote = (idNote, title) =>{	 
+export const editionPost = (idPost, title) =>{	 
     // document.getElementById("input-new-note").value = title;	   
-    const button = document.getElementById(`btn-edition-${idNote}`);	
+    const button = document.getElementById(`btn-edition-${idPost}`);	
     button.innerHTML= "Guardar";	
   //  const btnEdition = document.createElement("button");	
   //     btnEdition.setAttribute("id", "btn-edition");	
   //     document.getElementById("muro-post").appendChild(btnEdition);	
       
      button.addEventListener("click", () => {	
-          const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
-          const newPost = document.getElementById(`text-${idNote}`).value;	
+          const washingtonRef = firebase.firestore().collection("post").doc(idPost);	
+          const newPost = document.getElementById(`text-${idPost}`).value;	
           // Set the "capital" field of the city 'DC'	
           return washingtonRef.update({	
            title: newPost	
@@ -159,10 +158,10 @@ export const editionNote = (idNote, title) =>{
      });	
 }
 
-export const likeCountShow = (idNote, objNote) => {
+export const likeCountShow = (idPost, objPost) => {
   const likeCount = objNote.likePost + 1;
-  const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
-  document.getElementById(`btn-count-${objNote.id}`).value = likeCount;
+  const washingtonRef = firebase.firestore().collection("post").doc(idPost);	
+  document.getElementById(`btn-count-${objPost.id}`).value = likeCount;
   return washingtonRef.update({	
     likePost: likeCount
    })	
