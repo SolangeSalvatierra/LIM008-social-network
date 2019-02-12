@@ -10,7 +10,6 @@
 :-moz-placeholder { 
   color: cyan;
 }
-
 body {
     padding: 0px;
     margin: 0px;
@@ -20,7 +19,6 @@ body {
     color: rgba(0, 0, 0, 0.87);
     font-family: 'Raleway', sans-serif;
 }
-
 .img-logo {
         width: 80%;
 }
@@ -33,12 +31,10 @@ h2 {
     color: #ffffff;
     font-size: 20px;
 }
-
 h3 {
     color: #ffffff;
     font-size: 18px;
 }
-
 .conteiner{
     background-color:rgba(0, 0, 0, 0.8);
     width: 60%;
@@ -55,12 +51,10 @@ h3 {
     color: #ffffff;
     font-size: 12px;
 }
-
 .login {
     justify-content:flex-end;
     align-items:flex-start;
 }
-
 .text-field {
     background: transparent;
     border: 0px solid #000;
@@ -71,27 +65,24 @@ h3 {
     margin: 20px auto;
     font-size: 15px;
   }
-  
   .text-field:focus{
     outline:none;
     box-shadow:none;
     background: transparent;
     border-bottom: 1px solid #8814ff;  
   }
-
   #btn-cerrar-sesion {
     color: black;
     transition: all ease .3s;
     background: cyan;
     outline: none;
     box-shadow: none;
-    border: 1px solid #ffffff; */
+    border: 1px solid #ffffff;
     /* padding: 12px; */
     border-radius: 50%;
     margin: 0px 62px;
     font-size: 16px;
 }
-
 #btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-note {
     color: black;
     width: 60%;
@@ -105,7 +96,6 @@ h3 {
     margin: 15px;
     font-size: 16px;
 }
-      
       #btn-registrarse:hover,#btn-cerrar-sesion:hover,#btn-acceder:hover, #btn-crear:hover,#btn-back-login:hover,#btn-add-note:hover{
         background: #0075c7; 
         color: white;
@@ -120,20 +110,16 @@ h3 {
     padding: 10px 0px 0px;
     margin: 8px 5px 0px;  
 }
-
 .icon {
   width: 25px;
   padding: 5px;
 }
-
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-}
-
-        
+} 
  .contenedor{
   padding: 100px 0px;
   width: 100%;
@@ -142,7 +128,6 @@ footer {
   text-align: center;
   font-size: 15px;
 }
-
 .menu {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -153,25 +138,21 @@ footer {
   top: 0;
   left: 0;
 }
-
 .menu a {
   display: inline-flex;
   color: #000000;
   text-decoration: none;
   padding: 15px;
 }
-
 .menu nav{
   float: center;
 }
-
 .menu nav a{
   line-height: normal;
 }
 .menu a :hover{
   background:rgba(60, 95, 141, 0.3);
 }
-
 .contend-post{
   font: 1em sans-serif;
   width: 80%;
@@ -180,7 +161,6 @@ footer {
   margin: 28px;
   padding: 20px;
 }
-
 .textarea{
   width: 100%;
   height: 100%;
@@ -201,18 +181,6 @@ footer {
 } 
 
 @media screen and (min-width:480px) {
-
-
-
-
-
-
-
-
-
-
-
-
 
     
 }
