@@ -19,4 +19,4 @@ const firebase = {
 
 export default jest.fn (() => {
     return firebase;
-})
+});

@@ -39,10 +39,7 @@ export const aparecer = (user) => {
   const users = user;
   const contenido = document.getElementById("contenido");
   if (users.emailVerified){ 
-  contenido.innerHTML = `
-      <p> Bienvenido! </p>
-      <button onclick="cerrar()"> Cerrar Sesión </button>
-      `;
+      return true;
   } 
 }
 
@@ -52,7 +49,7 @@ export const verificar = () => {
   if (user) {
   user.sendEmailVerification().then(() => {
   // Email sent.
-  console.log("enviando correo...");  
+  alert('se envió un correo de confirmación') 
   }).catch((error) => {
 // An error happened.
 console.log(error);
@@ -106,7 +103,7 @@ export const loginFacebook = () => {
   });
 }
 
-export const getNotes = (callback) =>
+export const getPosts = (callback) =>{
   firebase.firestore().collection('post')
     .onSnapshot((querySnapshot) => {
       const data = [];
@@ -115,50 +112,53 @@ export const getNotes = (callback) =>
       });
       callback(data);
     }); 
+}
     
-export const addNote = (textNewNote) => {
+export const addPost = (textNewPost) => {
     return firebase.firestore().collection('post').add({
-      title: textNewNote,
+      title: textNewPost,
       state: false,
       likePost: 0
     })
   }
   
-export const deleteNote = (idNote) =>
-    firebase.firestore().collection('post').doc(idNote).delete()
+export const deletePostOnClick = (idPost) => {
+  return firebase.firestore().collection('post').doc(idPost).delete()
+}
 
 export const cerrar = () => 
    firebase.auth().signOut()
       
-   export const editionNote = (objNote) =>{	 
-    document.getElementById(`text-${objNote.id}`).disabled = false;
-        const button = document.getElementById(`btn-edition-${objNote.id}`);	
-        const spaGuardar = document.getElementById(`span-${objNote.id}`)
-        spaGuardar.innerHTML= "Guardar";	
-          
-         button.addEventListener("click", () => {	
-              const washingtonRef = firebase.firestore().collection("post").doc(objNote.id);	
-              const newPost = document.getElementById(`text-${objNote.id}`).value;
-              console.log(newPost);
-              // Set the "capital" field of the city 'DC'	
-              return washingtonRef.update({	
-               title: newPost	
-              })	
-              .then(function() {	
-                // spaGuardar.innerHTML = 'Editar'
-                 console.log("Document successfully updated!");	      
-               })	
-              .catch(function(error) {	
-              // The document probably doesn't exist.	
-                 console.error("Error updating document: ", error);	
-              });	
-         });	
-    }
+export const editionPost = (idPost, title) =>{	 
+    // document.getElementById("input-new-note").value = title;	   
+    const button = document.getElementById(`btn-edition-${idPost}`);	
+    button.innerHTML= "Guardar";	
+  //  const btnEdition = document.createElement("button");	
+  //     btnEdition.setAttribute("id", "btn-edition");	
+  //     document.getElementById("muro-post").appendChild(btnEdition);	
+      
+     button.addEventListener("click", () => {	
+          const washingtonRef = firebase.firestore().collection("post").doc(idPost);	
+          const newPost = document.getElementById(`text-${idPost}`).value;	
+          // Set the "capital" field of the city 'DC'	
+          return washingtonRef.update({	
+           title: newPost	
+          })	
+          .then(function() {	
+            button.innerHTML = 'Editar'
+             console.log("Document successfully updated!");	      
+           })	
+          .catch(function(error) {	
+          // The document probably doesn't exist.	
+             console.error("Error updating document: ", error);	
+          });	
+     });	
+}
 
-export const likeCountShow = (idNote, objNote) => {
-  const likeCount = objNote.likePost + 1;
-  const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
-  document.getElementById(`btn-count-${objNote.id}`).value = likeCount;
+export const likeCountShow = (idPost, objPost) => {
+  const likeCount = objPost.likePost + 1;
+  const washingtonRef = firebase.firestore().collection("post").doc(idPost);	
+  document.getElementById(`btn-count-${objPost.id}`).value = likeCount;
   return washingtonRef.update({	
     likePost: likeCount
    })	

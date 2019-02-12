@@ -1,3 +1,5 @@
+
+
 import MockFirebase from 'mock-cloud-firestore';
 
 const fixtureData = {
@@ -38,5 +40,4 @@ describe('muro', () => {
         }
       ))
   })
-
 })
