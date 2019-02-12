@@ -72,17 +72,21 @@ h3 {
     border-bottom: 1px solid #8814ff;  
   }
   #btn-cerrar-sesion {
-    color: black;
-    transition: all ease .3s;
-    background: cyan;
-    outline: none;
-    box-shadow: none;
-    border: 1px solid #ffffff;
-    /* padding: 12px; */
-    border-radius: 50%;
-    margin: 0px 62px;
-    font-size: 16px;
-}
+      color: black;
+      transition: all ease .3s;
+      background: cyan;
+      outline: none;
+      box-shadow: none;
+      border: 1px solid #ffffff;
+      /* padding: 12px; */
+      border-radius: 50%;
+      margin: 14px 0px;
+      font-size: 16px;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+  }
+
 #btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-note {
     color: black;
     width: 60%;
@@ -111,8 +115,7 @@ h3 {
     margin: 8px 5px 0px;  
 }
 .icon {
-  width: 25px;
-  padding: 5px;
+  width: 20px;
 }
 footer {
     position: fixed;
@@ -129,6 +132,7 @@ footer {
   font-size: 15px;
 }
 .menu {
+  display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100px;
@@ -155,7 +159,6 @@ footer {
 }
 .contend-post{
   font: 1em sans-serif;
-  width: 80%;
   height: 150px;
   background: floralwhite;
   margin: 28px;
@@ -164,7 +167,7 @@ footer {
 .textarea{
   width: 100%;
   height: 100%;
-  background: #e2fffb;
+  background: #cdf8f2;
   border: none;
   resize: none;
   font-size: 18px;
@@ -175,10 +178,17 @@ footer {
 }
 
 .post-button {
-  margin: 10px;
+  margin: 10px 0px;
   padding: 18px;
   text-align: -webkit-right;
 } 
+
+#new-post {
+  width: auto;
+  height: 150%;
+  font-size: 20px;
+}
+
 
 @media screen and (min-width:480px) {
 

@@ -12,7 +12,7 @@ const itemNote = (objNote) => {
       <hr>
       <img id="btn-like-${objNote.id}" alt="ico-heart" class="icon" src="https://cdn141.picsart.com/271344092058211.png" />
       <span id="btn-count-${objNote.id}">${objNote.likePost}</span>
-      <img id="btn-edition-${objNote.id}" alt="ico-edition" class="icon" src="https://cdn.icon-icons.com/icons2/916/PNG/512/Edit_icon-icons.com_71853.png" />
+      <img id="btn-edition-${objNote.id}" alt="ico-edition" class="icon" src=https://cdn.icon-icons.com/icons2/916/PNG/512/Edit_icon-icons.com_71853.png />
       <span id="span-${objNote.id}">Editar</span>
 
       <img id="btn-deleted-${objNote.id}" alt="ico-heart" class="icon" src="https://img2.freepng.es/20180613/tqx/kisspng-computer-icons-clip-art-delete-5b2111cc434902.7190528915288939002756.jpg" />
@@ -39,8 +39,8 @@ export default (notes) => {
   const homeContent = `
     <!-- form add note -->
     <nav class='menu'>
-    <a href='#' id = "btn-cerrar-sesion"> Cerrar Sesión </a>
     <a href='#/post'> <img id="img-logo" alt="img-logo" class="logo" src="ima/traveller.1.png" >    
+    <a href='#' id = "btn-cerrar-sesion"> Cerrar Sesión </a>
     </nav>
 
     <div   class="contenedor">
@@ -48,7 +48,7 @@ export default (notes) => {
     
     <form>
       <div id ="muro-post">
-        <input id="input-new-note" placeholder = "Agrega post" ></input>
+        <input id="new-post" placeholder = "Agrega post" ></input>
       </div>
       <button id="btn-add-note"> Compartir
       </button>
