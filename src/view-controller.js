@@ -7,6 +7,7 @@ export const changeHash = (hash) =>  {
   export const signInOnSubmitCreate = () => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
+    
     let ok = 0;
   for(let i=0 ; i<email.length ; i++){
     if(email[i].charCodeAt() === 64){         
