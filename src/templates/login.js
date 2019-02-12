@@ -9,7 +9,7 @@ export default () => {
 
   <input  class="text-field" id="email" type = "email" placeholder="usuario *">
   <input  class="text-field" id="password" type = "password" placeholder="contraseña *">
-  <button class="login" type = "button" id="btn-acceder"> Iniciar Sección </button>
+  <button class="login" type = "button" id="btn-acceder"> Iniciar Sesión </button>
   <div>
       <label> O ingresa a través de:</label>
   </div>

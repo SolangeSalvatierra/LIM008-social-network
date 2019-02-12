@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {signInOnSubmitCreate} from "../view-controller.js";
-=======
 import {signInOnSubmitCreate, signInOnSubmitGoogle, signInOnSubmitFacebook, changeHash} from "../view-controller.js";
->>>>>>> f0407cdc105c40a5a9ee52eb965a1280c60dc427
 //no es necesario poner el .js
 // import {formIngresarCuenta} from "./login.js"
 
