@@ -7,9 +7,13 @@ export const changeHash = (hash) => {
 export const signInOnSubmitCreate = () => {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
-  registrar(email, password)
+  if(typeof email === 'string' && typeof password === 'string'){
+    registrar(email, password)
     .then(() => changeHash('/post'))
     .catch(() => { })
+  } else {
+    alert('Los campos ingresados son incorrectos');
+  }  
 }
 
 export const signInOnSubmit = () => {

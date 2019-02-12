@@ -27,11 +27,16 @@ const viewTmp = (routers) => {
       root.appendChild(Create());
       break;
       case 'post':
-    console.log("prueba de hash")
-      getPosts((posts) => {
+      const user = firebase.auth().currentUser;
+      if(user){
+        console.log("prueba de hash")
+        getPosts((posts) => {
         root.innerHTML = '';        
         root.appendChild(Post(posts));  
       })
+      } else {
+        root.appendChild(Login());
+      }   
       break;
       default:
       root.appendChild(Login());

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1549923976051" clover="3.2.0">
-  <project timestamp="1549923976051" name="All files">
+<coverage generated="1549925032797" clover="3.2.0">
+  <project timestamp="1549925032797" name="All files">
     <metrics statements="82" coveredstatements="21" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="6" elements="115" coveredelements="27" complexity="0" loc="82" ncloc="82" packages="1" files="1" classes="1">
       <file name="controller-firebase.js" path="C:\Users\Laboratoria\Documents\Project_RedSocial\LIM008-social-network\src\controller\controller-firebase.js">
         <metrics statements="82" coveredstatements="21" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="6"/>

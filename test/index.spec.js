@@ -12,7 +12,6 @@ global.firebase = firebasemock.MockFirebaseSdk(
   () => mockfirestore
 );
 
-// iniciando tests
 
 import {registrar} from"../src/controller/controller-firebase.js";
 
