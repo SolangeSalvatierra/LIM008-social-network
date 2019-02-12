@@ -7,13 +7,27 @@ export const changeHash = (hash) => {
 export const signInOnSubmitCreate = () => {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
-  if(typeof email === 'string' && typeof password === 'string'){
-    registrar(email, password)
-    .then(() => changeHash('/post'))
-    .catch(() => { })
-  } else {
-    alert('Los campos ingresados son incorrectos');
-  }  
+  let ok = 0;
+  for(let i=0 ; i<email.length ; i++){
+    if(email[i].charCodeAt() === 64){         
+      for(let j=i ; j<email.length ; j++){
+        if(email[j].charCodeAt() === 46){ 
+          ok=1;          
+        }       
+      }  
+    }
+  }
+  if(ok===1){
+    //Probando lo de la validación de correo electrónico
+  registrar(email, password)
+  .then(() => {
+    verificar()          
+    changeHash('/login')          
+  })
+  .catch(() => {})    
+  }else{
+    alert('Debe ingresar un email valido');
+  }    
 }
 
 export const signInOnSubmit = () => {

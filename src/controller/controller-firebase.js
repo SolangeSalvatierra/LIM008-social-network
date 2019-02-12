@@ -39,10 +39,7 @@ export const aparecer = (user) => {
   const users = user;
   const contenido = document.getElementById("contenido");
   if (users.emailVerified){ 
-  contenido.innerHTML = `
-      <p> Bienvenido! </p>
-      <button onclick="cerrar()"> Cerrar Sesión </button>
-      `;
+      return true;
   } 
 }
 
@@ -52,7 +49,7 @@ export const verificar = () => {
   if (user) {
   user.sendEmailVerification().then(() => {
   // Email sent.
-  console.log("enviando correo...");  
+  alert('se envió un correo de confirmación') 
   }).catch((error) => {
 // An error happened.
 console.log(error);
@@ -159,7 +156,7 @@ export const editionPost = (idPost, title) =>{
 }
 
 export const likeCountShow = (idPost, objPost) => {
-  const likeCount = objNote.likePost + 1;
+  const likeCount = objPost.likePost + 1;
   const washingtonRef = firebase.firestore().collection("post").doc(idPost);	
   document.getElementById(`btn-count-${objPost.id}`).value = likeCount;
   return washingtonRef.update({	
