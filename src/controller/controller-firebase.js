@@ -1,40 +1,15 @@
-export const registrar = () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-firebase.auth().createUserWithEmailAndPassword(email, password)
-.then(() =>{
-  verificar()
-})
+// aqui exportaras las funciones que necesites
 
-.catch((error) => {
-// Handle Errors here.
-let errorCode = error.code;
-let errorMessage = error.message;
-console.log(error.code);
-console.log(error.message);
-// ...
-});
+export const registrar = (email, password) => {
+return firebase.auth().createUserWithEmailAndPassword(email, password)
 }
 
 export const acceder = (email, password) => {
-  // const email = document.getElementById("email2").value;
-  // const password = document.getElementById("password2").value;
-
   return firebase.auth().signInWithEmailAndPassword(email, password)
-  .catch((error) => {
-      // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      console.log(error.code);
-      console.log(error.message);
-      // ...
-    });
 }
 
-
-
-export const observador = () => {
-  firebase.auth().onAuthStateChanged((user) => {
+export const observador = (user) => {
+   return firebase.auth().onAuthStateChanged((user) => {
       if (user) {
           console.log ("existe usuario activo")
           aparecer(user);
@@ -71,16 +46,6 @@ export const aparecer = (user) => {
   } 
 }
 
-export const cerrar = () => {
-  firebase.auth().signOut()
-  .then(() => {
-      console.log("saliendo...")
-  })
-  .catch((error) => {
-      console.log(error)
-  })
-}
-
 export const verificar = () => {
   let user = firebase.auth().currentUser;
 
@@ -97,7 +62,7 @@ console.log(error);
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  return firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
     // The signed-in user info.
@@ -120,7 +85,7 @@ export const loginGoogle = () => {
 export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   provider.addScope('publish_pages');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  return firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
    const token = result.credential.accessToken;
     // The signed-in user info.
@@ -142,7 +107,7 @@ export const loginFacebook = () => {
 }
 
 export const getNotes = (callback) =>
-  firebase.firestore().collection('notes')
+  firebase.firestore().collection('post')
     .onSnapshot((querySnapshot) => {
       const data = [];
       querySnapshot.forEach((doc) => {
@@ -151,11 +116,58 @@ export const getNotes = (callback) =>
       callback(data);
     }); 
     
-export const addNote = (textNewNote) =>
-    firebase.firestore().collection('notes').add({
+export const addNote = (textNewNote) => {
+    return firebase.firestore().collection('post').add({
       title: textNewNote,
-      state: false
+      state: false,
+      likePost: 0
     })
+  }
   
 export const deleteNote = (idNote) =>
-    firebase.firestore().collection('notes').doc(idNote).delete()
+    firebase.firestore().collection('post').doc(idNote).delete()
+
+export const cerrar = () => 
+   firebase.auth().signOut()
+      
+   export const editionNote = (objNote) =>{	 
+    document.getElementById(`text-${objNote.id}`).disabled = false;
+        const button = document.getElementById(`btn-edition-${objNote.id}`);	
+        const spaGuardar = document.getElementById(`span-${objNote.id}`)
+        spaGuardar.innerHTML= "Guardar";	
+          
+         button.addEventListener("click", () => {	
+              const washingtonRef = firebase.firestore().collection("post").doc(objNote.id);	
+              const newPost = document.getElementById(`text-${objNote.id}`).value;
+              console.log(newPost);
+              // Set the "capital" field of the city 'DC'	
+              return washingtonRef.update({	
+               title: newPost	
+              })	
+              .then(function() {	
+                // spaGuardar.innerHTML = 'Editar'
+                 console.log("Document successfully updated!");	      
+               })	
+              .catch(function(error) {	
+              // The document probably doesn't exist.	
+                 console.error("Error updating document: ", error);	
+              });	
+         });	
+    }
+
+export const likeCountShow = (idNote, objNote) => {
+  const likeCount = objNote.likePost + 1;
+  const washingtonRef = firebase.firestore().collection("post").doc(idNote);	
+  document.getElementById(`btn-count-${objNote.id}`).value = likeCount;
+  return washingtonRef.update({	
+    likePost: likeCount
+   })	
+   .then(function() {	
+      console.log("Document successfully updated!");	      
+    })	
+   .catch(function(error) {	
+   // The document probably doesn't exist.	
+      console.error("Error updating document: ", error);	
+   });	
+
+}
