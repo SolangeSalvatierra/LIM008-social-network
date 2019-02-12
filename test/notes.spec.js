@@ -1,17 +1,41 @@
+import MockFirebase from 'mock-cloud-firestore';
 
-import myMock from '../_mocks_/firebase-mock.js'
-global.firebase = myMock();
+const fixtureData = {
+  __collection__: {
+    post: {
+      __doc__: {
+        gsa123: {
+          title: 'probando agregar un post',
+          complete: false
+        },
+      }
+    }
+  }
+}
 
-import{ addNote } from '../src/controller/controller-firebase.js';
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
+import {addPost, getPosts, deletePostOnClick} from '../src/controller/controller-firebase.js'
 
-
-
-describe('addNote', () => {
-    it ('Deberia de poder agregar un post', () =>{ 
-       return addNote ('como estas').then (() => {
-           expect (data).tobe ('como estas');
-            
-       })
-    })
+describe('muro', () => {
+  it('Debería porder agregar un post', (done) => {
+    return addPost('probando agregar un post')
+      .then(() => getPosts(
+        (data) => {
+          const result = data.find((note) => note.title === 'probando agregar un post');
+          expect(result.title).toBe('probando agregar un post');
+          done()
+        }
+      ))
+  });
+  it('Debería poder eliminar un post', (done) => {
+    return deletePostOnClick('gsa123')
+      .then(() => getPosts(
+        (data) => {
+          const result = data.find((post) => post.id === 'gsa123');
+          expect(result).toBe(undefined);
+          done()
+        }
+      ))
+  })
 })

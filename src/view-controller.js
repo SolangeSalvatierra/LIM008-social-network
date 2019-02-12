@@ -1,4 +1,4 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote} from './controller/controller-firebase.js';
+import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addNote, deleteNote, editionNote, likeCountShow} from './controller/controller-firebase.js';
 
 export const changeHash = (hash) =>  {
     location.hash = hash;
@@ -31,18 +31,17 @@ export const signInOnSubmitFacebook = () => {
     .then(() => changeHash('/post'))
     .catch(() => {})
 }
-
 export const addNoteOnSubmit = (event) => {
     event.preventDefault();
     const input = document.getElementById('input-new-note');
    
     addNote(input.value)
       .then(() => {
-        input.value = '';
-        data.message = 'Nota agregada'
+        // input.value = '';
+        // data.message = 'Nota agregada'
       }).catch(() => {
-        input.value = '';
-        data.message = 'Lo sentimos, no se pudo agregar la nota';
+        // input.value = '';
+        // data.message = 'Lo sentimos, no se pudo agregar la nota';
       });
 }
 
@@ -55,3 +54,9 @@ export const cerrarSesionONClick = () => {
   .then(() => changeHash(''))
   .catch(err => console.log('Error logout', err));
 }
+
+export const editionNoteOnClick = (objNote) =>	
+ editionNote(objNote) 
+
+export const likeClick = (objNote) => 
+  likeCountShow (objNote.id, objNote)
