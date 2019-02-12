@@ -6,7 +6,7 @@ const itemNote = (objNote) => {
 
   liElement.innerHTML = `
     <div class="post-title" id ="${objNote.id}">
-      <span id ="text-${objNote.id}" >${objNote.title}</span>
+      <textarea class = "textarea" id ="text-${objNote.id}" >${objNote.title}</textarea>
     </div>
     <div class="post-button">
       <hr>
@@ -20,6 +20,8 @@ const itemNote = (objNote) => {
     </div>
 
   `;
+  // document.getElementById(`text-${objNote.id}`).disabled = true;
+  liElement.querySelector(`#text-${objNote.id}`).disabled = true;
   // agregando evento de click al btn eliminar una nota
   liElement.querySelector(`#btn-deleted-${objNote.id}`)
     .addEventListener('click', () => deleteNoteOnClick(objNote));

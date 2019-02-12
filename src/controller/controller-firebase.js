@@ -130,34 +130,29 @@ export const deleteNote = (idNote) =>
 export const cerrar = () => 
    firebase.auth().signOut()
       
-export const editionNote = (objNote) =>{	 
-  document.getElementById(objNote.id).innerHTML=`
-    <input id ="text2-${objNote.id}" ></input>
-    
-`
-    const button = document.getElementById(`btn-edition-${objNote.id}`);	
-    const spaGuardar = document.getElementById(`span-${objNote.id}`)
-    spaGuardar.innerHTML= "Guardar";	
-  //  const btnEdition = document.createElement("button");	
-  //     btnEdition.setAttribute("id", "btn-edition");	
-  //     document.getElementById("muro-post").appendChild(btnEdition);	
-      
-     button.addEventListener("click", () => {	
-          const washingtonRef = firebase.firestore().collection("post").doc(objNote.id);	
-          const newPost = document.getElementById(`text2-${objNote.id}`).value;	
-          // Set the "capital" field of the city 'DC'	
-          return washingtonRef.update({	
-           title: newPost	
-          })	
-          .then(function() {	
-            spaGuardar.innerHTML = 'Editar'
-             console.log("Document successfully updated!");	      
-           })	
-          .catch(function(error) {	
-          // The document probably doesn't exist.	
-             console.error("Error updating document: ", error);	
-          });	
-     });	
+  export const editionNote = (objNote) =>{	 
+    document.getElementById(`text-${objNote.id}`).disabled = false;
+        const button = document.getElementById(`btn-edition-${objNote.id}`);	
+        const spaGuardar = document.getElementById(`span-${objNote.id}`)
+        spaGuardar.innerHTML= "Guardar";	
+          
+         button.addEventListener("click", () => {	
+              const washingtonRef = firebase.firestore().collection("post").doc(objNote.id);	
+              const newPost = document.getElementById(`text-${objNote.id}`).value;
+              console.log(newPost);
+              // Set the "capital" field of the city 'DC'	
+              return washingtonRef.update({	
+               title: newPost	
+              })	
+              .then(function() {	
+                // spaGuardar.innerHTML = 'Editar'
+                 console.log("Document successfully updated!");	      
+               })	
+              .catch(function(error) {	
+              // The document probably doesn't exist.	
+                 console.error("Error updating document: ", error);	
+              });	
+         });	
 }
 
 export const likeCountShow = (idNote, objNote) => {
