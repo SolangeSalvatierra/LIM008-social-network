@@ -130,7 +130,7 @@ export const deleteNote = (idNote) =>
 export const cerrar = () => 
    firebase.auth().signOut()
       
-  export const editionNote = (objNote) =>{	 
+   export const editionNote = (objNote) =>{	 
     document.getElementById(`text-${objNote.id}`).disabled = false;
         const button = document.getElementById(`btn-edition-${objNote.id}`);	
         const spaGuardar = document.getElementById(`span-${objNote.id}`)
@@ -153,7 +153,7 @@ export const cerrar = () =>
                  console.error("Error updating document: ", error);	
               });	
          });	
-}
+    }
 
 export const likeCountShow = (idNote, objNote) => {
   const likeCount = objNote.likePost + 1;
