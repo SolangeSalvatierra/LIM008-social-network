@@ -7,10 +7,28 @@ export const changeHash = (hash) =>  {
   export const signInOnSubmitCreate = () => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    registrar(email, password)
-      .then(() => changeHash('/post'))
-      .catch(() => {})
+    let ok = 0;
+  for(let i=0 ; i<email.length ; i++){
+    if(email[i].charCodeAt() === 64){         
+      for(let j=i ; j<email.length ; j++){
+        if(email[j].charCodeAt() === 46){ 
+          ok=1;          
+        }       
+      }  
+    }
   }
+  if(ok===1){
+    //Probando lo de la validación de correo electrónico
+  registrar(email, password)
+  .then(() => {
+    verificar()          
+    changeHash('/login')          
+  })
+  .catch(() => {})    
+  }else{
+    alert('Debe ingresar un email valido');
+  }  
+}
 
 export const signInOnSubmit = () => {
     const email = document.querySelector('#email').value;
@@ -33,7 +51,7 @@ export const signInOnSubmitFacebook = () => {
 }
 export const addNoteOnSubmit = (event) => {
     event.preventDefault();
-    const input = document.getElementById('input-new-note');
+    const input = document.getElementById('new-post');
    
     addNote(input.value)
       .then(() => {
