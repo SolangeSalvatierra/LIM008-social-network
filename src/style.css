@@ -87,7 +87,7 @@ h3 {
       justify-content: center;
   }
 
-#btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-note {
+#btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-post {
     color: black;
     width: 60%;
     transition: all ease .3s;
@@ -100,12 +100,12 @@ h3 {
     margin: 15px;
     font-size: 16px;
 }
-      #btn-registrarse:hover,#btn-cerrar-sesion:hover,#btn-acceder:hover, #btn-crear:hover,#btn-back-login:hover,#btn-add-note:hover{
+      #btn-registrarse:hover,#btn-cerrar-sesion:hover,#btn-acceder:hover, #btn-crear:hover,#btn-back-login:hover,#btn-add-post:hover{
         background: #0075c7; 
         color: white;
       }
       
-      #btn-registrarse:active, #btn-cerrar-sesion:active,#btn-acceder:active,#btn-crear:active,#btn-back-login:active,#btn-add-note:active{
+      #btn-registrarse:active, #btn-cerrar-sesion:active,#btn-acceder:active,#btn-crear:active,#btn-back-login:active,#btn-add-post:active{
         border: 1px solid cyan;
       }
 

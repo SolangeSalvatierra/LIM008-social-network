@@ -5,21 +5,20 @@ import {signInOnSubmitCreate, signInOnSubmitGoogle, signInOnSubmitFacebook, chan
 export  default () => {
     const form = document.createElement('form');
     const  contenidoForm  =  `
+
     <div   class="conteiner">
     <img src="ima/traveller.1.png" class="img-logo">
-    <h2> Registro de usuarios </h2>
-    <div>
-        <label> Regístrate con:
-        <div>
-        <img id="auth-fb" alt="ico-fb" class="ico-fb" src="https://i.ibb.co/NmxyWjL/ico-fb.png" />
-        <img id="auth-google" alt="ico-google" class="ico-google" src="https://i.ibb.co/xgLXQrr/ico-gg.png" />
-        </div>
-        </label>
-    </div>
+        <h2> Registro de usuarios </h2>
+            <div>
+                <label>Regístrate con:</label>
+                <img id="auth-fb" alt="ico-fb" class="ico-fb" src="https://i.ibb.co/NmxyWjL/ico-fb.png" />
+                <img id="auth-google" alt="ico-google" class="ico-google" src="https://i.ibb.co/xgLXQrr/ico-gg.png" />
+            </div>
+
             <div>                
             <input  class="text-field" id = "email" type = "email" placeholder = "Correo">
             <input  class="text-field" id = "password" type = "password" placeholder = "Contraseña">
-                <button type = "button" id = "btn-crear"> Registrate </button>
+            <button type = "button" id = "btn-crear"> Registrate </button>
             </div>            
            
             <div>            
