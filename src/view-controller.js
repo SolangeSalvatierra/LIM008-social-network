@@ -1,4 +1,5 @@
-import { registrar, acceder, observador, aparecer, cerrar, verificar, loginGoogle, loginFacebook, addPost, deletePostOnClick, editionPost, likeCountShow } from './controller/controller-firebase.js';
+import { registrar, acceder, cerrar, verificar, loginGoogle, loginFacebook, addPost,
+   deletePostOnClick, editionPost, likeCountShow } from './controller/controller-firebase.js';
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -110,8 +111,10 @@ export const cerrarSesionONClick = () => {
     .catch(err => console.log('Error logout', err));
 }
 
-export const editionPostOnClick = (objPost) =>	
- editionPost(objPost) 
+export const editionPostOnClick = (objPost) =>{	
+ const newPost = document.getElementById(`text-${objPost.id}`).value;
+ return editionPost(objPost.id, newPost); 
+}
 
 export const likeClick = (objPost) =>
   likeCountShow(objPost.id, objPost)

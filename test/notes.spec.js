@@ -6,6 +6,7 @@ const fixtureData = {
     post: {
       __doc__: {
         gsa123: {
+          email: 'alexisfer.18@gmail.com',
           title: 'probando agregar un post',
           complete: false
         },
@@ -23,9 +24,19 @@ describe('muro', () => {
     return addPost('probando agregar un post')
       .then(() => getPosts(
         (data) => {
-          const result = data.find((post) => post.title === 'probando agregar un post');
+          const result = data.find((note) => note.title === 'probando agregar un post');
           expect(result.title).toBe('probando agregar un post');
           done()
+        }
+      ))
+  });
+  it('Debería poder editar un post', (done) => {
+    return editionPost('gsa123','Post modificado')
+      .then(() => getPosts(
+        (data) => {
+          const result = data.find((post) => post.title === 'Post modificado');
+          expect(result.title).toBe('Post modificado');
+          done();
         }
       ))
   });
@@ -38,15 +49,5 @@ describe('muro', () => {
           done()
         }
       ))
-  });
-  it('Debería poder editar un post', (done) => {
-    return editionPost('gsa123')
-    .then(() => getPosts(
-      (data) => {
-        const result = data.find((post) => post.title === 'probando agregar un post');
-        expect(result.title).toBe('nota modificada')
-        done()
-      }
-    ))
-  });
-});
+  });  
+})

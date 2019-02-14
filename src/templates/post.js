@@ -25,8 +25,22 @@ const itemPost = (objPost) => {
   // agregando evento de click al btn eliminar una nota
   liElement.querySelector(`#btn-deleted-${objPost.id}`)
     .addEventListener('click', () => deletePostOnSubmit(objPost));
-  liElement.querySelector(`#btn-edition-${objPost.id}`)	
-    .addEventListener('click', () => editionPostOnClick(objPost));
+
+  // liElement.querySelector(`#btn-edition-${objPost.id}`)	
+  //   .addEventListener('click', () => editionPostOnClick(objPost));
+
+liElement.querySelector(`#btn-edition-${objPost.id}`)
+    .addEventListener('click', () => {
+      document.getElementById(`text-${objPost.id}`).disabled = false;
+      const guardar = document.getElementById(`btn-edition-${objPost.id}`);	
+      const spaGuardar = document.getElementById(`span-${objPost.id}`)
+      spaGuardar.innerHTML= "Guardar";	
+
+      guardar.addEventListener("click", () => editionPostOnClick(objPost));
+    })
+
+
+
   liElement.querySelector(`#btn-like-${objPost.id}`)	
     .addEventListener('click', () => likeClick(objPost));
   return liElement;
