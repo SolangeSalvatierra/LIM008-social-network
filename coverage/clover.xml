@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1550100942034" clover="3.2.0">
-  <project timestamp="1550100942034" name="All files">
-    <metrics statements="84" coveredstatements="21" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="6" elements="117" coveredelements="27" complexity="0" loc="84" ncloc="84" packages="1" files="1" classes="1">
-      <file name="controller-firebase.js" path="C:\Users\Laboratoria\Desktop\repo-social\LIM008-social-network\src\controller\controller-firebase.js">
-        <metrics statements="84" coveredstatements="21" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="6"/>
+<coverage generated="1550107050761" clover="3.2.0">
+  <project timestamp="1550107050762" name="All files">
+    <metrics statements="84" coveredstatements="22" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="7" elements="117" coveredelements="29" complexity="0" loc="84" ncloc="84" packages="1" files="1" classes="1">
+      <file name="controller-firebase.js" path="C:\Users\Laboratoria\Documents\Project_RedSocial\LIM008-social-network\src\controller\controller-firebase.js">
+        <metrics statements="84" coveredstatements="22" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="7"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
@@ -70,7 +70,7 @@
         <line num="129" count="2" type="stmt"/>
         <line num="130" count="0" type="stmt"/>
         <line num="132" count="2" type="stmt"/>
-        <line num="133" count="0" type="stmt"/>
+        <line num="133" count="1" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
         <line num="135" count="0" type="stmt"/>
         <line num="136" count="0" type="stmt"/>

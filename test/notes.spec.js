@@ -16,14 +16,14 @@ const fixtureData = {
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import {addPost, getPosts, deletePostOnClick} from '../src/controller/controller-firebase.js'
+import {addPost, getPosts, deletePostOnClick, editionPost} from '../src/controller/controller-firebase.js'
 
 describe('muro', () => {
   it('Debería porder agregar un post', (done) => {
     return addPost('probando agregar un post')
       .then(() => getPosts(
         (data) => {
-          const result = data.find((note) => note.title === 'probando agregar un post');
+          const result = data.find((post) => post.title === 'probando agregar un post');
           expect(result.title).toBe('probando agregar un post');
           done()
         }
@@ -38,5 +38,15 @@ describe('muro', () => {
           done()
         }
       ))
-  })
-})
+  });
+  it('Debería poder editar un post', (done) => {
+    return editionPost('gsa123')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find((post) => post.title === 'probando agregar un post');
+        expect(result.title).toBe('nota modificada')
+        done()
+      }
+    ))
+  });
+});
