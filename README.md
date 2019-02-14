@@ -1,393 +1,139 @@
 # Creando una Red Social
 
-<img src="https://theguiltycode.com/wp-content/uploads/2018/03/o-COUPLE-TRAVELING-facebook.jpg">
-
+<img src="https://theguiltycode.com/wp-content/uploads/2018/03/o-COUPLE-TRAVELING-facebook.jpg"> 
 
 ## Índice
 
-* [Preámbulo](#preámbulo)
-* [Introducción](#introducción)
-* [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-* [Consideraciones generales](#consideraciones-generales)
-* [Parte obligatoria](#parte-obligatoria)
-* [Parte opcional](#hacker-edition)
-* [Consideraciones técnicas](#consideraciones-técnicas)
-* [Consideraciones UX](#consideraciones-ux)
-* [Consideraciones Agile](#consideraciones-ágil)
-* [Habilidades blandas](#habilidades-blandas)
-* [Enrega Final](#entrega)
-* [Pistas / Tips / Lecturas complementarias](#recursos)
+* [Preámbulo red social](#preámbulo-red-social)
+* [Resumen del Proyecto](#resumen-del-proyecto)
+* [Como definimos nuestros usuarios](#como-definimos-nuestros-usuarios)
+* [Historias de usuarios](#historias-de-usuarios)
+* [Prototipo de alta fidelidad](#prototipo-de-alta-fidelidad)
 * [Checklist](#checklist)
 
-## Preámbulo
+## Preámbulo red social
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
+Empecemos haciéndonos la siguiente pregunta ¿Qué son las redes sociales?  Sabemos que son sitios de internet formados por comunidades de personas con intereses o actividades en común (como amistad, parentesco, trabajo) y que permiten el contacto entre estos, de manera que se puedan comunicar e intercambiar información.
+Los individuos no necesariamente se tienen que conocer previo a tomar contacto a través de una red social, sino que pueden hacerlo a través de ella, y ese es uno de los mayores beneficios de las comunidades virtuales.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+   #####Tipos de Redes Sociales
 
-## Introducción
+*	Redes genéricas: Son muy numerosas y populares (como Facebook o Twitter).
+*	Redes profesionales: Como LinkedIn, que involucran individuos que comparten el ámbito laboral o que buscan ampliar sus fronteras laborales y pueden ser abiertas o cerradas.
+*	Redes temáticas: Relacionan personas con intereses específicos en común, como música, hobbies, deportes, etc., siendo la más famosa Flickr (temática: fotografía).
 
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
+# Resumen del Proyecto
 
-## Objetivos de Aprendizaje
+¿QUIÉN NO QUERRÍA PASARSE LA VIDA VIAJANDO? 
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
- (con más de una vista / página) en la que podamos **leer y escribir datos.**
+Aunque al principio debe ser algo complicado, durante el transcurso terminas aprendiendo muchas cosas que pueden ayudarte a mantener tus viajes.
+Desde dónde comprar los boletos de avión, como llegar de manera rápida, que caminos tomar, hasta saber en qué lugares te puedes hospedar, no hay fuente más confiable que la que proviene de la misma experiencia de otras personas que hayan visitado antes el lugar. He allí la importancia del tema que hoy venimos a discutir. Imagínate que planeas un viaje, pero no sabes ni por dónde comenzar.
 
-Dicho en palabras sencillas, aprenderás a:
+      *TRAVELLER* nació a partir de la dificultad que encontramos en nuestros usuarios viajeros que era capturar, compartir sus historias y aventuras que encontraban en sus viajes. Así que decidieron crear una red a manera de comentarios, recomendaciones y/o guía turística que permitiera compartir sus experiencias y conectar con otras personas con los mismos intereses. En él podrás encontrar inspiración e inspirar a otras personas para descubrir nuevos lugares.
 
-* Aplicar y profundizar todo lo que aprendiste en el proyecto anterior.
-* Entender las necesidades de los usuarios para los que crearás el producto y
-  que ayudarás a resolver.
-* Poner en juego tu creatividad para generar ideas que lleven a una solución
-  original y valiosa del problema.
-* Contar con el apoyo de tus compañeras, debes trabajar en equipo buscando
-  _feedback_ constante.
-* Definir como crear la estructura de tu propia data y de qué forma mostrarla en
-  el producto.
+## Como definimos nuestros usuarios
 
-## Consideraciones generales
+Realizándonos las siguientes preguntas:
+ 1. ¿Quiénes son los principales usuarios de producto?
+-	Nuestros principales usuarios son los viajeros lovers, personas que viajan constantemente sin importar distancias.
+ 2. ¿Cómo descubriste las necesidades de los usuarios ?
+-	Las necesidades de nuestros usuarios fueron extraídas de la encuesta que realizamos: 
 
-Este proyecto se debe "resolver" en tríos.
+<img src="https://user-images.githubusercontent.com/45084376/52767246-ea8c4680-2ff7-11e9-94d0-7f3b4aebb527.jpg">  
+<img src="https://user-images.githubusercontent.com/45084376/52767248-ea8c4680-2ff7-11e9-9487-89f4142db66d.jpg">
+<img src="https://user-images.githubusercontent.com/45084376/52767247-ea8c4680-2ff7-11e9-8704-4926d4512095.jpg">
 
-La lógica del proyecto debe estar implementada completamente en JavaScript (ES6+),
-HTML y CSS :smiley:. Para este proyecto no está permitido utilizar
-frameworks o librerías de CSS y JS.
+* En estaspregunta nos enfocamos mas en ver que tan comunicado se mantienen nuestros usuarios con personas que han conocido en alguno de sus viajes
 
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este
-repositorio.
+<img src="https://user-images.githubusercontent.com/45084376/52767249-eb24dd00-2ff7-11e9-89ce-414758a5dce0.jpg">
 
-## Parte obligatoria
+*Aquí vemos la necesidad especifica de nuestros usuarios
 
-### General
+<img src="https://user-images.githubusercontent.com/45084376/52767251-eb24dd00-2ff7-11e9-8a24-9830fee9e289.jpg">
 
-En este proyecto, tú junto a tus compañeras de equipo deberán definir los
-_tests_ que consideren necesarios; puedes guiarte de los proyectos
-anteriores. Igualmente el proyecto cuenta con una estructura de carpetas
-y archivos ya definida pero pueden modificarla de acuerdo a como desean
-trabajar la estructura de su proyecto :smiley:.
+*En esta pregunta nos queremos enfocar en que situacion usarian nuestro producto y con cierto tiempo
 
-### Definición del producto
+<img src="https://user-images.githubusercontent.com/45084376/52767252-eb24dd00-2ff7-11e9-9fa2-10d69a7c0fb6.jpg">
 
-En el `README.md` colocar cómo conociste el mercado de las redes sociales, cómo
-descubriste las necesidades de los usuarios, cómo llegaste  la definición final
-de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
-(bocetos) compártelos. Es importante que detalles:
+\* Puedes ver la interfaz construida en este  [Link] (https://docs.google.com/forms/d/e/1FAIpQLSfkQkikzi4k2jlU70kTwtvp-E_f4ReWZn2-g9ZtI-DoBMMm0w/viewform?usp=fb_send_fb&fbclid=IwAR0RvK2ClrH8Tx6OTwpZr3rlEuROE2lGqhpG3oVZ2mGw1mK2UV5HDDiu_bg)
 
-* Cuáles son los elementos básicos que tiene una red social
-* Quiénes son los principales usuarios de producto
-* Cómo descubriste las necesidades de los usuarios
-* Qué problema resuelve el producto para estos usuarios
-* Cuáles son los objetivos de estos usuarios en relación con el producto
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad
-* Cómo verificaste que el producto les está resolviendo sus problemas
-* Cómo te asegurarás que estos usuarios usen este producto
+3. ¿Qué problema resuelve el producto para estos usuarios?
+-	Traveller es el medio por el cual nuestros usuarios podrán tener información de cómo viajar y que cosas deben de          realizar respecto a costos, vías y donde llegar.
 
-Para poder llegar a estas definiciones te recomendamos ver: entrevistas con
-usuarios y tests de usabilidad.
+4. ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+-	Los objetivos de nuestros usuarios es mantenerte informados y descubrir nuevos lugares, gracias a las experiencias de otras personas.
 
-### Historias de usuario
+5. ¿Cuáles son las principales funcionalidades del producto y cuál es su prioridad?
+-	Nuestra red social tiene como prioridad la publicación de experiencias contadas por nuestros usuarios.
+-	También cuenta la edición de sus publicaciones.
+-	Eliminar ciertas publicaciones que ya no le gustan.
+-	Y dar su opinión respecto a que si le gusta la información compartida por nuestros usuarios.
 
-Una vez que entiendas las necesidades de tu usuario, escribe las Historias de
-Usuario que representen todo lo que el usuario necesita hacer/ver. Asegúrate
-de incluir una definición de terminado (definition o done) para cada una.
+6. Cómo verificaste que el producto les está resolviendo sus problemas
+-	Testeando nuestro producto con usuarios que tengan el perfil de nuestro público seleccionado, y ver si nuestra red        social les esta ayudando a informarse respecto a las dudas que tengas de un viaje que quieran realizar.
+
+7. Cómo te asegurarás que estos usuarios usen este producto
+-	Nos gustarías que lo usan cada cierto tiempo que deseen tener información de aventuras y viajes realizados por otras personas.
+
+## Historias de usuario
+
+Luego de haber realizado nuestras encuestas, implementamos las historias de usuario con respecto a los requerimientos de nuestra red social.
+
+Para todas las historias, en general, su definición de terminado son las siguientes:
+
+Que sea `Single Page Application`
+Que esté publicado en `gh-pages`
+Que sea `mobile first`
+Que se haga un prototipo de baja fidelidad
+Que se implementen los `test` de las funciones creadas.
+
+#### Historia 1
+COMO: usuario quiero crear una cuenta en la red social
+
+#### Historia 2
+COMO: usuario quiero ingresar con mi cuenta creada en la red social
+
+#### Historia 3
+COMO: usuario me gustaría registrarme en la red social con mi cuenta de Faceboock
+
+#### Historia 4
+COMO: usuario quisiera registrarme con mi cuenta de google 
+
+#### Historia 5
+COMO: usuario quisiera poder cerrar sesión de mi cuenta
+
+#### Historia 6
+COMO: usuario me gustaría poder ver publicaciones de otros usuarios de la red social
+
+#### Historia 7
+COMO: usuario me gustaría interactuar con like en las publicaciones de otros usuarios de la red social
+
+#### Historia 8
+COMO: usuario quisiera realizar publicaciones en mi nueva red social
+
+#### Historia 9
+COMO: usuario quiero personalizar  mis publicaciones en privado o publico
+
+#### Historia 10
+COMO: usuario quiero que se me permita eliminar mis publicaciones realizadas en la red social
 
 ### Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI por sus siglas en inglés) de
-esta red social que siga este flujo.
-Este diseño debe representar la solución que se implementará finalmente en
-código.
+Para realizar el prototipo de baja fidelidad de nuestra red social (Traveller) se hizo uso del diseño mobile first.
 
-### Responsive
+* En esta parte vemos lo que seria nuestras primeras vistas  de login y creación de cuenta
+<img src="https://user-images.githubusercontent.com/45084376/52768822-828c2f00-2ffc-11e9-9143-5534556bfc0b.jpg"> 
 
-Debe verse bien en dispositivos de pantallas grandes
-(computadoras/es, laptops, etc.) y pequeñas (tablets, celulares, etc.). Te
-sugerimos seguir la técnica de `mobile first` (más detalles sobre esta técnica
-al final).
+* Y en esta otra parte vemos como se veria nuestro muro y los post de las publicaciones de nuestros usuarios
+<img src="https://user-images.githubusercontent.com/45084376/52768823-8324c580-2ffc-11e9-8a83-f89b9bb651f6.jpg"> 
 
-### Pruebas unitarias (unit tests)
+## Prototipo de alta fidelidad
 
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-_lines_, y _branches_.
+<img src="https://user-images.githubusercontent.com/45084376/52769588-b6685400-2ffe-11e9-8fa3-abdff95aed58.jpg">
 
-### Implementación de la Interfaz de Usuario (UI y comportamiento de Interfaz de Usuario)
+\* Puedes encontrar nuestra red social en este  [Link] (https://gladyshuancalu.github.io/LIM008-social-network/src/)
 
-La idea para este producto es que el producto a desarrollar siga los
-lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
-largo de la implementación que los elementos propuestos están siendo
-implementados correctamente.
-
-La interfaz debe permitir lo siguiente:
-
-#### Creación de cuenta de usuario e inicio de sesión
-
-* Login con Firebase:
-  - Para el login y las publicaciones en el muro puedes utilizar [Firebase](https://firebase.google.com/products/database/)
-  - Autenticación con Facebook - Google.
-* Validaciones:
-  - No pueden haber usuarios repetidos.
-  - La cuenta de usuario debe ser un correo electrónico válido.
-  - Lo que se escriba en el campo (_input_) de contraseña debe ser secreto.
-* Comportamiento:
-  - Al enviarse un formulario de registro o inicio de sesión, debe validarse.
-  - En caso haya errores, el sistema debe mostrar mensajes de error para
-    ayudar al usuario a corregirlos.
-  - La aplicación solo permitirá el acceso a usuarios con cuentas válidas.
-  - Al recargar la aplicación, se debe verificar si el usuario está
-    logueado antes de mostrarle el contenido privado.
-* Perspectiva de interfaz:
-
-  ![Login](https://user-images.githubusercontent.com/9284690/40994765-c3cf9602-68c2-11e8-89ac-8254859b5ebb.png)
-
-#### Muro/timeline de la red social
-
-* Validaciones:
-  - Al apretar el botón de publicar, debe validar que exista contenido en el input.
-* Comportamiento:
-  - Poder publicar un post.
-  - Poder poner like a una publicación.
-  - Llevar un conteo de los likes.
-  - Poder eliminar un post específico.
-  - Poder filtrar los posts sólo para mis amigos y para todo público.
-  - Pedir confirmación antes de eliminar un post.
-  - Al darle click en el botón editar, debe cambiar el texto por un input que
-    permita editar el texto y cambiar el link por guardar.
-  - Al darle guardar debe cambiar de vuelta a un texto normal pero con la
-    información editada.
-  - Al recargar la página debo de poder ver los textos editados
-* Perspectiva de interfaz:
-
-  ![Muro](https://user-images.githubusercontent.com/9284690/40994768-c52c3442-68c2-11e8-99a5-9e127e700dee.png)
-
-#### Otras consideraciones
-
-* La aplicación no debe dejar hacer publicaciones vacías de ningun tipo.
-* El usuario debe poder agregar, editar y eliminar contenido de la red
-  social.
-* El usuario debe poder definir la privacidad de lo que pública.
-* Al editar contenido, el contenido editado se verá automáticamente,
-  inmediatamente después de guardar.
-* Al recargar la página se deben poder ver los contenidos editados.
-
-Personaliza estas guías con los colores y/o tipografías que creas convenientes.
-Recuerda que al hacer estas adaptaciones deberás seguir los fundamentos de
-_visual design_ como contraste, alineación, jerarquía, entre otros.
-
-### Hacker edition
-
-* Crear posts con imágenes
-* Permite agregar amigos.
-* Permite eliminar amigos.
-* Permite compartir publicación (en twitter esto es retwittear, en facebook
-  es compartir).
-* Permite comentar o responder una publicación.
-* Permite editar perfil.
-* Permite ver perfil o resumen desde el _muro_ o lista de publicaciones.
-
-### Consideraciones técnicas
-
-El corazón de este proyecto incluye:
-
-* Separar la manipulación del DOM de la lógica (Separación de responsabilidades).
-* Contar con multiples vistas para esto tu aplicacion debera ser una
- [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-* Que el sitio sea responsive, ya dicho.
-* Alterar y persistir datos. Los datos que agregues o modifiques deberán
-  persistir a lo largo de la aplicación, te recomendamos que uses
-  [Firebase](https://firebase.google.com/).
-
-Además, podrías agregar algunas tareas nuevas de acuerdo a tus decisiones:
-
-* Recuerda que no hay un setup de **tests** definido, dependerá de
-  la estructura de tu proyecto también, pero algo que no debes de olvidar es
-  pensar en éstas pruebas, incluso te podrían ayudar a definir la estructura y
-  nomenclatura de tu lógica.
-
-### Consideraciones UX
-
-Desde el punto de vista de UX, deberás:
-
-* Hacer al menos 2 o 3 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de testing con el producto en HTML.
-
-### Consideraciones Ágil
-
-Esta vez te recomendamos que los ítems de tu Backlog de Producto estén escritos
-como [Historias de Usuario](http://jmbeas.es/guias/historias-de-usuario/).
-Esta es una técnica muy simple que te ayudará a:
-
-* Organizar el trabajo en función del valor que le aporta al usuario.
-* Poder publicar partes completas y utilizables del producto al final del
-  sprint.
-* Que el equipo trabaje de manera multidisciplinaria de manera natural.
-
-### Habilidades Blandas
-
-Trabajar en equipo es un gran desafío porque coordinarse no es una tarea fácil,
-y es más difícil entre tres que entre dos. Trata que tu equipo te entienda,
-facilitando siempre el diálogo en dentro del squad.
-
-Planifica enumerando las tareas y distribuyéndolas, considerando los
-recursos, las habilidades, y el tiempo del que dispones. Planifica de manera
-que te permita avanzar en los distintos aspectos del proyecto de forma paralela,
-teniendo un tablero donde puedas ver en qué está trabajando cada compañera.
-
-Entrega tu trabajo a tu equipo a tiempo y colabora con el objetivo
-final del proyecto, lo que puede implicar ayudar a los demás miembros del equipo
-con sus pendientes, con el fin de entregar una red social de calidad.
-
-**La división del trabajo debe permitir que todo el equipo
-practique el aprendizaje de todas las habilidades esperadas. No se dividan el
-trabajo como en una fábrica**
-
-Para conocer a los usuario para eso debes salir e investigar. Tienes que
-ejercitar tus habilidades de comunicación y toma de decisiones.
-Existen infinitas opciones, depende de ti el camino que escoges.
-Para que tu red social responda a las necesidades de sus usuarios, probablemente
-deberás adquirir nuevos conocimientos para implementar sus preferencias.
-
-Esta vez, haz _code review_(feedback de tu código) con **otro squad**, para
-que puedas mejorar el producto. Mientras más feedback reciban, mejor.
-
-Esperamos que valores y escuches los comentarios y críticas de los demás,
-rescatando aquellos aspectos que sirven para tu crecimiento. Entrega siempre
-tu opinión de manera constructiva, fundamentada y coherente, con el propósito
-de ayudar a tus compañeras. Estos comentarios los debes hacer de manera honesta,
-empática e inmediata.
-
-Finalmente, deberás presentar el proyecto que creaste, al usuario que escogiste
-y las necesidades que lograste resolver en este proceso. Como siempre, sabemos
-que presentar puede ser una tarea difícil, esperamos que tengas capacidad de
-síntesis y articules tus ideas con claridad para que logres mostrar tu trabajo
-y que los demás lo comprendan.
-
-## Entrega
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting que
-puedas haber encontrado en el camino.
-
-## Evaluación
-
-### Tech
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| **JavaScript** | |
-| Estilo | 3
-| Nomenclatura/semántica | 3
-| Funciones/modularidad | 2
-| Estructuras de datos | 2
-| Tests | 2
-| **HTML** | |
-| Validación | 3
-| Estilo | 3
-| Semántica | 3
-| **CSS** | |
-| DRY | 3
-| Responsive | 3
-| **SCM** | |
-| Git | 3
-| GitHub | 3
-| **CS** | |
-| Lógica | 2
-| Arquitectura | 2
-
-### UX
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| User Centricity | 3
-| Visual Desing | 2
-
-### Habilidades Blandas
-
-Para este proyecto esperamos que ya hayas alcanzado el nivel 3 en todas tus
-habilidades blandas. Te aconsejamos revisar la rúbrica:
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| Planificación y organización | 3
-| Autoaprendizaje | 3
-| Solución de Problemas | 3
-| Dar y recibir feedback | 3
-| Adaptabilidad | 3
-| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 3
-| Comunicación eficaz | 3
-| Presentaciones | 3
-
-***
-
-## Recursos
-
-### Mobile first
-
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve como adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
-
-### Múltiples vistas
-
-En proyectos anteriores nuestras aplicaciones habían estado compuestas de una
-sola _vista_ principal (una sóla _página_). En este proyecto se introduce la
-necesidad de tener que dividir nuestra interfaz en varias _vistas_ o _páginas_
-y ofrecer una manera de navegar entre estas vistas. Este problema se puede
-afrontar de muchas maneras: con archivos HTML independientes (cada uno con su
-URL) y links tradicionales, manteniendo estado en memoria y rederizando
-condicionalmente (sin refrescar la página), [manipulando el historial del
-navegador](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-En este proyecto te invitamos a explorar opciones y decidir una opción
-de implementación.
-
-### Escritura de datos
-
-En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
-habíamos escrito datos (salvar cambios, crear datos, borrar, ...). En este
-proyecto tendrás que crear (salvar) nuevos datos, así como leer, actualizar y
-modificar datos existentes. Estos datos se podrán guardar de forma remota
-usando [Firebase](https://firebase.google.com/).
-
-Otras:
-
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
 
 ***
 
@@ -436,13 +182,3 @@ Otras:
   etc...).
 * [ ] Permite ver cuántas marcas, likes, estrellas, corazones o lo que se haya
   elegido, ha recibido una publicación.
-
-### Hacker Edition
-
-* [ ] Permite agregar amigos.
-* [ ] Permite eliminar amigos.
-* [ ] Permite compartir publicación (en twitter esto es retwittear, en facebook
-  es compartir).
-* [ ] Permite comentar o responder una publicación.
-* [ ] Permite editar perfil.
-* [ ] Permite ver perfil o resumen desde el _muro_ o lista de publicaciones.
