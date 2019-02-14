@@ -49,12 +49,22 @@ export default (posts) => {
       <div id ="muro-post">
         <input id="new-post" placeholder = "Agrega post" ></input>
       </div>
+      <select name="select" id ="select-privacity">
+        <option value="public">Público</option> 
+        <option value="private">Privado</option>
+      </select>
       <button id="btn-add-post"> Compartir
       </button>
     </form>
 
     <!-- posts -->
     <section>
+      <div>
+        <select name="select" id ="posts-list-privacity">
+         <option value="public-post">Ver posts públicos</option> 
+         <option value="private-post">Ver posts privados</option>
+        </select>
+      </div>
       <div id="posts-list">
       </div>
     </section>
@@ -67,9 +77,30 @@ export default (posts) => {
   divContainer.innerHTML = homeContent;
   const buttonAddPost = divContainer.querySelector('#btn-add-post');
   const div = divContainer.querySelector('#posts-list');
-  posts.forEach(post => {
-    div.appendChild(itemPost(post));
-  });
+  const selectPostPrivacity = divContainer.querySelector('#posts-list-privacity');
+  selectPostPrivacity.addEventListener('change', ()=>{
+    div.innerHTML = "";
+    if(selectPostPrivacity.value== "public-post"){
+      posts.forEach(post => {
+        if(post.privacity == "public"){
+          div.appendChild(itemPost(post));
+        }
+      })
+    }
+
+    else {
+      posts.forEach(post => {
+        if(post.privacity == "private"){
+          div.appendChild(itemPost(post));
+        }
+      })
+
+    }
+
+
+
+  })
+
   buttonAddPost.addEventListener('click', addPostOnSubmit);
 
   const btnCerrarSesion = divContainer.querySelector('#btn-cerrar-sesion');
