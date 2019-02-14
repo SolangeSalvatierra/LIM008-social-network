@@ -6,6 +6,7 @@ const fixtureData = {
     post: {
       __doc__: {
         gsa123: {
+          likePost: 1,
           email: 'alexisfer.18@gmail.com',
           title: 'probando agregar un post',
           complete: false
@@ -17,7 +18,7 @@ const fixtureData = {
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import {addPost, getPosts, deletePostOnClick, editionPost} from '../src/controller/controller-firebase.js'
+import {addPost, getPosts, deletePostOnClick, editionPost, likeCountShow} from '../src/controller/controller-firebase.js'
 
 describe('muro', () => {
   it('Debería porder agregar un post', (done) => {
@@ -39,6 +40,16 @@ describe('muro', () => {
           done();
         }
       ))
+  });
+  it('Debería dar un like', (done) => {
+    return likeCountShow('gsa123', '1')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find((post) => post.likePost === '1');
+        expect(result.likePost).toBe('1');
+        done();
+      }
+    ))
   });
   it('Debería poder eliminar un post', (done) => {
     return deletePostOnClick('gsa123')

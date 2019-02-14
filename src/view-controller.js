@@ -116,5 +116,10 @@ export const editionPostOnClick = (objPost) =>{
  return editionPost(objPost.id, newPost); 
 }
 
-export const likeClick = (objPost) =>
-  likeCountShow(objPost.id, objPost)
+export const likeClick = (objPost) =>{
+  const likeCount = objPost.likePost + 1;
+  const newLike = document.getElementById(`btn-count-${objPost.id}`).value = likeCount;
+  return likeCountShow(objPost.id, newLike);
+
+}
+  
