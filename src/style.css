@@ -1,3 +1,6 @@
+*{ text-decoration: none;  
+}
+
 ::-webkit-input-placeholder {
   color: cyan;
 }
@@ -23,8 +26,7 @@ body {
         width: 80%;
 }
 .logo {
-  width: 70%;
-  padding: 0px 25px;
+  padding: 10px 25px;;
 }
 
 h2 {
@@ -35,7 +37,7 @@ h3 {
     color: #ffffff;
     font-size: 18px;
 }
-.conteiner{
+.conteiner,.conteiner2 {
     background-color:rgba(0, 0, 0, 0.8);
     width: 60%;
     padding: 40px;
@@ -44,27 +46,40 @@ h3 {
     border: 2px solid transparent;
     width: 66%;
     max-width: 400px;
-    margin: 20px auto;
+    margin: 32px auto;
     text-align: center;
     height: 80vh;
-    font-size: 15px;
+    font-size: 18px;
     color: #ffffff;
     font-size: 12px;
 }
+
+.conteiner2 {
+  background-color: rgba(5, 0, 49, 0.69);
+}
+
+label {
+  font-size: 17px;
+}
+
+
+
+
+
 .login {
     justify-content:flex-end;
     align-items:flex-start;
 }
 .text-field {
-    background: transparent;
-    border: 0px solid #000;
-    border-bottom: 1px solid #0075c7;
-    margin-left: 5px;
-    color: rgb(143, 250, 250);
-    /* padding: 20px 4px; */
-    margin: 20px auto;
-    font-size: 15px;
-  }
+  background: transparent;
+  border: 0px solid #000;
+  border-bottom: 1px solid #0075c7;
+  margin-left: 5px;
+  color: rgb(143, 250, 250);
+  /* padding: 20px 4px; */
+  margin: 20px auto;
+  font-size: 18px;
+}
   .text-field:focus{
     outline:none;
     box-shadow:none;
@@ -72,33 +87,34 @@ h3 {
     border-bottom: 1px solid #8814ff;  
   }
   #btn-cerrar-sesion {
-      color: black;
-      transition: all ease .3s;
-      background: cyan;
-      outline: none;
-      box-shadow: none;
-      border: 1px solid #ffffff;
-      /* padding: 12px; */
-      border-radius: 50%;
-      margin: 14px 0px;
-      font-size: 16px;
-      width: 40px;
-      height: 40px;
-      justify-content: center;
-  }
-
-#btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-post {
     color: black;
-    width: 60%;
     transition: all ease .3s;
-    background:  cyan;
+    background: cyan;
     outline: none;
     box-shadow: none;
     border: 1px solid #ffffff;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 25px auto;
     font-size: 16px;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+  }
+
+#btn-registrarse, #btn-acceder, #btn-crear,#btn-back-login,#btn-add-post {
+  color: black;
+  width: 60%;
+  transition: all ease .3s;
+  background: cyan;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #ffffff;
+  padding: 9px;
+  border-radius: 5px;
+  margin: 18px;
+  font-size: 18px;
+  text-align: -webkit-center;
 }
       #btn-registrarse:hover,#btn-cerrar-sesion:hover,#btn-acceder:hover, #btn-crear:hover,#btn-back-login:hover,#btn-add-post:hover{
         background: #0075c7; 
@@ -109,20 +125,20 @@ h3 {
         border: 1px solid cyan;
       }
 
+ #btn-add-post {
+  width:auto;
+}
+
+
 .ico-fb, .ico-google, .icon{
-    width: 45px;
-    padding: 10px 0px 0px;
-    margin: 8px 5px 0px;  
+  width: 45px;
+  padding: 4px 0px 0px;
+  margin: 10px 4px 0px; 
 }
 .icon {
   width: 20px;
 }
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-} 
+
  .contenedor{
   padding: 100px 0px;
   width: 100%;
@@ -131,7 +147,7 @@ footer {
   text-align: center;
   font-size: 15px;
 }
-.menu {
+.header-menu {
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -141,6 +157,8 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
+
 }
 .menu a {
   display: inline-flex;
@@ -149,7 +167,7 @@ footer {
   padding: 15px;
 }
 .menu nav{
-  float: center;
+  float: right;
 }
 .menu nav a{
   line-height: normal;
@@ -157,6 +175,18 @@ footer {
 .menu a :hover{
   background:rgba(60, 95, 141, 0.3);
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+} 
+
 .contend-post{
   font: 1em sans-serif;
   height: 150px;
@@ -179,9 +209,14 @@ footer {
 
 .post-button {
   margin: 10px 0px;
-  padding: 18px;
+  /* padding: 18px; */
   text-align: -webkit-right;
 } 
+
+span{
+  font-size: 14px;
+
+}
 
 #new-post {
   width: auto;

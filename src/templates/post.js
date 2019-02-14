@@ -14,9 +14,8 @@ const itemPost = (objPost) => {
       <span id="btn-count-${objPost.id}">${objPost.likePost}</span>
       <img id="btn-edition-${objPost.id}" alt="ico-edition" class="icon" src="https://image.flaticon.com/icons/png/512/1428/1428326.png" />
       <span id="span-${objPost.id}">Editar</span>
-
       <img id="btn-deleted-${objPost.id}" alt="ico-heart" class="icon" src="https://img2.freepng.es/20180613/tqx/kisspng-computer-icons-clip-art-delete-5b2111cc434902.7190528915288939002756.jpg" />
-
+      <span id="span-${objPost.id}">Eliminar</span>
     </div>
 
   `;
@@ -37,14 +36,14 @@ export default (posts) => {
   const divContainer = document.createElement('div');
   const homeContent = `
     <!-- form add post -->
-    <nav class='menu'>
-    <a href='#/post'> <img id="img-logo" alt="img-logo" class="logo" src="ima/traveller.1.png" >    
-    <a href='#' id = "btn-cerrar-sesion"> Cerrar Sesión </a>
-    </nav>
 
+    <header class="header-menu">
+    <img id="img-logo" alt="img-logo" class="logo" src="ima/traveller.1.png" >
+    <a href='#login' id = "btn-cerrar-sesion"> Cerrar Sesión </a>
+    </nav>
+    </header>
     <div   class="contenedor">
     <a class = "contenedor-home">
-    
     <form>
       <div id ="muro-post">
         <input id="new-post" placeholder = "Agrega post" ></input>
@@ -59,7 +58,8 @@ export default (posts) => {
       </div>
     </section>
 
-    <footer class= "footer"> 
+    <footer class="footer"> 
+    <label> Copyright </label>
     </footer>
     
   `;

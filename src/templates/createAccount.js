@@ -6,15 +6,17 @@ export  default () => {
     const form = document.createElement('form');
     const  contenidoForm  =  `
 
-    <div   class="conteiner">
+    <div   class="conteiner2">
     <img src="ima/traveller.1.png" class="img-logo">
         <h2> Registro de usuarios </h2>
             <div>
-                <label>Regístrate con:</label>
+                <label> con:</label>
+                <div>
                 <img id="auth-fb" alt="ico-fb" class="ico-fb" src="https://i.ibb.co/NmxyWjL/ico-fb.png" />
                 <img id="auth-google" alt="ico-google" class="ico-google" src="https://i.ibb.co/xgLXQrr/ico-gg.png" />
-            </div>
-
+                </div>
+                </div>
+                <label> ó </label>
             <div>                
             <input  class="text-field" id = "email" type = "email" placeholder = "Correo">
             <input  class="text-field" id = "password" type = "password" placeholder = "Contraseña">
@@ -22,7 +24,7 @@ export  default () => {
             </div>            
            
             <div>            
-                <label>¿Ya tienes una cuenta en Traveller?<label>
+                <label>¿Ya tienes una cuenta?<label>
                 <button type = "button" id = "btn-back-login">Inicia sesión</button>
             </div>
     </div>
