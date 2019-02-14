@@ -73,7 +73,18 @@ export const getPosts = (callback) =>{
       callback(data);
     }); 
 }
-    
+
+export const getPostsByPrivacity = (privacityValue, callback) =>{
+  firebase.firestore().collection('post').where('privacity', '==', privacityValue)
+    .onSnapshot((querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() })
+      });
+      callback(data);
+    }); 
+}
+
 export const addPost = (textNewPost) => {
     return firebase.firestore().collection('post').add({
       title: textNewPost,
