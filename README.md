@@ -1,5 +1,8 @@
 # Creando una Red Social
 
+<img src="https://theguiltycode.com/wp-content/uploads/2018/03/o-COUPLE-TRAVELING-facebook.jpg">
+
+
 ## Índice
 
 * [Preámbulo](#preámbulo)

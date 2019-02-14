@@ -12,7 +12,7 @@ const itemPost = (objPost) => {
       <hr>
       <img id="btn-like-${objPost.id}" alt="ico-heart" class="icon" src="https://cdn141.picsart.com/271344092058211.png" />
       <span id="btn-count-${objPost.id}">${objPost.likePost}</span>
-      <img id="btn-edition-${objPost.id}" alt="ico-edition" class="icon" src=https://cdn.icon-icons.com/icons2/916/PNG/512/Edit_icon-icons.com_71853.png />
+      <img id="btn-edition-${objPost.id}" alt="ico-edition" class="icon" src="https://image.flaticon.com/icons/png/512/1428/1428326.png" />
       <span id="span-${objPost.id}">Editar</span>
 
       <img id="btn-deleted-${objPost.id}" alt="ico-heart" class="icon" src="https://img2.freepng.es/20180613/tqx/kisspng-computer-icons-clip-art-delete-5b2111cc434902.7190528915288939002756.jpg" />
