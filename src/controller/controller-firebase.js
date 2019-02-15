@@ -7,60 +7,25 @@ export const registrar = (email, password) => {
   }
   
   export const verificar = () => {
-   let user = firebase.auth().currentUser;
-  
-   if (user) {
-   user.sendEmailVerification().then(() => {
-   // Email sent.
-   alert('se envió un correo de confirmación')
-   }).catch((error) => {
-  // An error happened.
-  console.log(error);
-   });
+    let user = firebase.auth().currentUser;   
+    if (user) {
+    user.sendEmailVerification()
+    .then(() => {
+    // Email sent.
+    alert('se envió un correo de confirmación')
+    })
+    .catch(() =>{
+    });
+    }
    }
-  }
   export const loginGoogle = () => {
    const provider = new firebase.auth.GoogleAuthProvider();
-   //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-   return firebase.auth().signInWithPopup(provider).then(function(result) {
-     // This gives you a Google Access Token. You can use it to access the Google API.
-     const token = result.credential.accessToken;
-     // The signed-in user info.
-     const user = result.user;
-     console.log(user);
-     // ...
-   }).catch(function(error) {
-     // Handle Errors here.
-     // console.log (error);
-     const errorCode = error.code;
-     const errorMessage = error.message;
-     // The email of the user's account used.
-     const email = error.email;
-     // The firebase.auth.AuthCredential type that was used.
-     const credential = error.credential;
-     // ...
-   });
+   return firebase.auth().signInWithPopup(provider)
   }
   
   export const loginFacebook = () => {
-   const provider = new firebase.auth.FacebookAuthProvider();
-   provider.addScope('publish_pages');
-   return firebase.auth().signInWithPopup(provider).then(function(result) {
-     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const token = result.credential.accessToken;
-     // The signed-in user info.
-     const user = result.user;
-  
-   }).catch(function(error) {
-  
-     const errorCode = error.code;
-     const errorMessage = error.message;
-      // The email of the user's account used.
-     const email = error.email;
-     // The firebase.auth.AuthCredential type that was used.
-     const credential = error.credential;
-     // ...
-   });
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return firebase.auth().signInWithPopup(provider);  
   }
   
   export const getPosts = (callback) =>{

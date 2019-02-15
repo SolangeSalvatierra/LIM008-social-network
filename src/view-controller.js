@@ -10,15 +10,15 @@ export const signInOnSubmitCreate = () => {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
   let ok = 0;
-  //validando que los campos de email y password no esten vacíos 
+  //validando que los campos de email y password no esten vacíos
   if(email !== '' && password !== ''){
     for(let i=0 ; i<email.length ; i++){
-      if(email[i].charCodeAt() === 64){         
+      if(email[i].charCodeAt() === 64){
         for(let j=i ; j<email.length ; j++){
-          if(email[j].charCodeAt() === 46){ 
-            ok=1;          
-          }       
-        }  
+          if(email[j].charCodeAt() === 46){
+            ok=1;
+          }
+        }
       }
     }
     if(ok===1){
@@ -26,22 +26,22 @@ export const signInOnSubmitCreate = () => {
       //Probando lo de la verificación de correo electrónico
       registrar(email, password)
       .then(() => {
-        verificar()          
-        changeHash('/login')          
+        verificar()
+        changeHash('/login')
       })
       .catch(() => {})
       }else {
         alert('la contraseña debe contener un mínimo de 6 caracteres')
-      }         
-
+      }
+ 
     }else{
       alert('Debe ingresar un email valido');
-    } 
-
+    }
+ 
   }else{
     alert('debe completar los campos requeridos');
-  }     
-}
+  }
+ }
 
 export const signInOnSubmit = () => {
   const email = document.querySelector('#email').value;

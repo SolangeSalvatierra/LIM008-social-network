@@ -2,8 +2,8 @@
 const firebasemock = require('firebase-mock');
 const mockauth = new firebasemock.MockFirebase();
 const mockfirestore = new firebasemock.MockFirestore();
-mockfirestore.autoFlush();
-mockauth.autoFlush();
+// mockfirestore.autoFlush();
+// mockauth.autoFlush();
 
 global.firebase = firebasemock.MockFirebaseSdk(
   // use null if your code does not use RTDB
@@ -13,14 +13,17 @@ global.firebase = firebasemock.MockFirebaseSdk(
 );
 
 
-import {registrar} from"../src/controller/controller-firebase.js";
+import {registrar, verificar} from"../src/controller/controller-firebase.js";
 
-describe('lista', () => {
+describe('Registro', () => {
   it('Debería poder crear cuenta', () => {
-    return  registrar ('alexisfer.18@gmail.com','000000')
+    registrar ('alexisfer.18@gmail.com','000000')
+    mockauth.flush();
+    mockauth.getUserByEmail('alexisfer.18@gmail.com')
       .then((user) => {
-       expect(user.email).toBe('alexisfer.18@gmail.com')
+       console.assert(user, 'se creó')
       })
-  });
+  });      
 })
+
 
