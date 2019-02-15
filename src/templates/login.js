@@ -17,7 +17,7 @@ export default () => {
         <img id="auth-fb" alt="ico-fb" class="ico-fb" src="https://i.ibb.co/NmxyWjL/ico-fb.png" />
         <img id="auth-google" alt="ico-google" class="ico-google" src="https://i.ibb.co/xgLXQrr/ico-gg.png" />
     </div>
-    <button class="button" type="button" id="btn-registrarse">Registrate</button>
+    <button class="button" type="button" id="btn-registrarse">Regístrate</button>
 </div>
 `;
   form.innerHTML = formContent;

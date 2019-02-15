@@ -7,7 +7,7 @@
 * [Preámbulo red social](#preámbulo-red-social)
 * [Resumen del Proyecto](#resumen-del-proyecto)
 * [Como definimos nuestros usuarios](#como-definimos-nuestros-usuarios)
-* [Historias de usuarios](#historias-de-usuarios)
+* [Historias de usuario](#historias-de-usuario)
 * [Prototipo de alta fidelidad](#prototipo-de-alta-fidelidad)
 * [Checklist](#checklist)
 
@@ -16,7 +16,7 @@
 Empecemos haciéndonos la siguiente pregunta ¿Qué son las redes sociales?  Sabemos que son sitios de internet formados por comunidades de personas con intereses o actividades en común (como amistad, parentesco, trabajo) y que permiten el contacto entre estos, de manera que se puedan comunicar e intercambiar información.
 Los individuos no necesariamente se tienen que conocer previo a tomar contacto a través de una red social, sino que pueden hacerlo a través de ella, y ese es uno de los mayores beneficios de las comunidades virtuales.
 
-   #####Tipos de Redes Sociales
+   ##### Tipos de Redes Sociales
 
 *	Redes genéricas: Son muy numerosas y populares (como Facebook o Twitter).
 *	Redes profesionales: Como LinkedIn, que involucran individuos que comparten el ámbito laboral o que buscan ampliar sus fronteras laborales y pueden ser abiertas o cerradas.
@@ -82,11 +82,11 @@ Luego de haber realizado nuestras encuestas, implementamos las historias de usua
 
 Para todas las historias, en general, su definición de terminado son las siguientes:
 
-Que sea `Single Page Application`
-Que esté publicado en `gh-pages`
-Que sea `mobile first`
-Que se haga un prototipo de baja fidelidad
-Que se implementen los `test` de las funciones creadas.
+* Que sea Single Page Application
+* Que esté publicado en gh-pages
+* Que sea mobile first
+* Que se haga un prototipo de baja fidelidad
+* Que se implementen los test de las funciones creadas.
 
 #### Historia 1
 COMO: usuario quiero crear una cuenta en la red social
@@ -123,10 +123,10 @@ COMO: usuario quiero que se me permita eliminar mis publicaciones realizadas en 
 Para realizar el prototipo de baja fidelidad de nuestra red social (Traveller) se hizo uso del diseño mobile first.
 
 * En esta parte vemos lo que seria nuestras primeras vistas  de login y creación de cuenta
-<img src="https://user-images.githubusercontent.com/45084376/52768822-828c2f00-2ffc-11e9-9143-5534556bfc0b.jpg"> 
+<img src="https://user-images.githubusercontent.com/45084376/52852676-4681c880-30e7-11e9-837d-2b8bcc232158.jpg"> 
 
 * Y en esta otra parte vemos como se veria nuestro muro y los post de las publicaciones de nuestros usuarios
-<img src="https://user-images.githubusercontent.com/45084376/52768823-8324c580-2ffc-11e9-8a83-f89b9bb651f6.jpg"> 
+<img src="https://user-images.githubusercontent.com/45084376/52852621-23571900-30e7-11e9-9df2-1566385c4f26.jpg"> 
 
 ## Prototipo de alta fidelidad
 
