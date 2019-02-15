@@ -87,8 +87,9 @@ export const signInOnSubmitFacebook = () => {
 export const addPostOnSubmit = (event) => {
   event.preventDefault();
   const input = document.getElementById('new-post');
+  const privacityValue = document.getElementById("select-privacity");
 
-  addPost(input.value)
+  addPost(input.value, privacityValue.value)
     .then(() => {
       
     }).catch(() => {
