@@ -89,8 +89,6 @@ describe('muro', () => {
         done()
     })
   })
-
-
   it('Debería poder eliminar un post', (done) => {
     return deletePostOnClick('gsa123')
       .then(() => getPosts(

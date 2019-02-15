@@ -32,10 +32,8 @@ export  default () => {
     </div>
 </div>
     `;
-    // const form = document.createElement('form');
-    // form.setAttribute('id', 'login');
     form.innerHTML = contenidoForm;
-    // El querySelector hace en este caso la función del "document.getElementById"
+    
     const btnAcceder = form.querySelector('#btn-crear');
     btnAcceder.addEventListener('click', signInOnSubmitCreate);
 

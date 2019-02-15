@@ -5,7 +5,7 @@ export default () => {
   const formContent = `
   <div class="conteiner">
     <img alt = 'logo-traveller' src="ima/traveller.1.png" class="img-logo">
-    <h2> Inicia Sección  </h2>
+    <h2> Inicia Sesión  </h2>
 
     <input class="text-field" id="email" type="email" placeholder="usuario *">
     <input class="text-field" id="password" type="password" placeholder="contraseña *">
@@ -22,13 +22,13 @@ export default () => {
 `;
   form.innerHTML = formContent;
 
-   // Inicia sesión con Correo y contraseña
+   
   const btnSignIn = form.querySelector('#btn-acceder');
   btnSignIn.addEventListener('click', signInOnSubmit);
-// Inicia sesion con cuenta Google
+  
   const btnGoogle = form.querySelector('#auth-google');
   btnGoogle.addEventListener('click', signInOnSubmitGoogle);
-// Inicia sesion con cuenta Facebook
+  
   const btnFacebook = form.querySelector('#auth-fb');
   btnFacebook.addEventListener('click', signInOnSubmitFacebook);
 

@@ -27,6 +27,18 @@ export const registrar = (email, password) => {
     const provider = new firebase.auth.FacebookAuthProvider();
     return firebase.auth().signInWithPopup(provider);  
   }
+
+  export const cerrar = () =>
+    firebase.auth().signOut()
+
+  export const addPost = (textNewPost, privacityValue) => {
+    return firebase.firestore().collection('post').add({
+      likePost: 0,
+      title: textNewPost,
+      state: false,
+      privacity: privacityValue
+    })
+  }
   
   export const getPosts = (callback) =>{
    firebase.firestore().collection('post')
@@ -49,31 +61,16 @@ export const registrar = (email, password) => {
        callback(data);
      });
   }
-  
-  export const addPost = (textNewPost, privacityValue) => {
-     return firebase.firestore().collection('post').add({
-       likePost: 0,
-       title: textNewPost,
-       state: false,
-       privacity: privacityValue
-     })
-   }
-  
+
   export const deletePostOnClick = (idPost) => {
    return firebase.firestore().collection('post').doc(idPost).delete()
-  }
-  
-  export const cerrar = () =>
-    firebase.auth().signOut()
-  
-  
+  }  
   
   export const editionPost = (idPost, newPost) => {
      return firebase.firestore().collection('post').doc(idPost).update({
      title: newPost
      });
-  }
-  
+  }  
   
   export const likeCountShow = (idPost, newLike) => {
    return firebase.firestore().collection('post').doc(idPost).update({

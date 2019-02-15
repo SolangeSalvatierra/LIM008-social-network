@@ -30,7 +30,7 @@ Los individuos no necesariamente se tienen que conocer previo a tomar contacto a
 Aunque al principio debe ser algo complicado, durante el transcurso terminas aprendiendo muchas cosas que pueden ayudarte a mantener tus viajes.
 Desde dónde comprar los boletos de avión, como llegar de manera rápida, que caminos tomar, hasta saber en qué lugares te puedes hospedar, no hay fuente más confiable que la que proviene de la misma experiencia de otras personas que hayan visitado antes el lugar. He allí la importancia del tema que hoy venimos a discutir. Imagínate que planeas un viaje, pero no sabes ni por dónde comenzar.
 
-      *TRAVELLER* nació a partir de la dificultad que encontramos en nuestros usuarios viajeros que era capturar, compartir sus historias y aventuras que encontraban en sus viajes. Así que decidieron crear una red a manera de comentarios, recomendaciones y/o guía turística que permitiera compartir sus experiencias y conectar con otras personas con los mismos intereses. En él podrás encontrar inspiración e inspirar a otras personas para descubrir nuevos lugares.
+      *TRAVELLER* nació a partir de la dificultad que encontramos en nuestros usuarios viajeros que quieren capturar, compartir sus historias y aventuras que encontraban en sus viajes. Así que decidieron crear una red a manera de comentarios, recomendaciones y/o guía turística que permitiera compartir sus experiencias y conectar con otras personas con los mismos intereses. En él podrás encontrar inspiración e inspirar a otras personas para descubrir nuevos lugares.
 
 ## Como definimos nuestros usuarios
 
@@ -44,11 +44,11 @@ Realizándonos las siguientes preguntas:
 <img src="https://user-images.githubusercontent.com/45084376/52767248-ea8c4680-2ff7-11e9-9487-89f4142db66d.jpg">
 <img src="https://user-images.githubusercontent.com/45084376/52767247-ea8c4680-2ff7-11e9-8704-4926d4512095.jpg">
 
-* En estaspregunta nos enfocamos mas en ver que tan comunicado se mantienen nuestros usuarios con personas que han conocido en alguno de sus viajes
+* En esta pregunta nos enfocamos en ver que tan comunicado se mantienen nuestros usuarios con personas que han conocido en alguno de sus viajes.
 
 <img src="https://user-images.githubusercontent.com/45084376/52767249-eb24dd00-2ff7-11e9-89ce-414758a5dce0.jpg">
 
-*Aquí vemos la necesidad especifica de nuestros usuarios
+*Aquí vemos la necesidad específica de nuestros usuarios
 
 <img src="https://user-images.githubusercontent.com/45084376/52767251-eb24dd00-2ff7-11e9-8a24-9830fee9e289.jpg">
 
@@ -73,8 +73,8 @@ Realizándonos las siguientes preguntas:
 6. Cómo verificaste que el producto les está resolviendo sus problemas
 -	Testeando nuestro producto con usuarios que tengan el perfil de nuestro público seleccionado, y ver si nuestra red        social les esta ayudando a informarse respecto a las dudas que tengas de un viaje que quieran realizar.
 
-7. Cómo te asegurarás que estos usuarios usen este producto
--	Nos gustarías que lo usan cada cierto tiempo que deseen tener información de aventuras y viajes realizados por otras personas.
+7. Cómo te aseguraras que estos usuarios usen este producto
+-	Es una herramienta que les brinda información útil antes, durante y después de realizar un viaje.
 
 ## Historias de usuario
 

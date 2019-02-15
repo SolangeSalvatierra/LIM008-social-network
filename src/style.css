@@ -17,8 +17,10 @@ body {
     padding: 0px;
     margin: 0px;
     background-image:url("ima/OS5DEC01.jpg");
-    background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
     color: rgba(0, 0, 0, 0.87);
     font-family: 'Raleway', sans-serif;
 }

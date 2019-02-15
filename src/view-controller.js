@@ -86,33 +86,25 @@ export const signInOnSubmitFacebook = () => {
     .then(() => changeHash('/post'))
     .catch(() => { })
 }
+
+export const cerrarSesionONClick = () => {
+  cerrar()
+    .then(() => changeHash(''))
+    .catch(err => console.log('Error logout', err));
+}
+
 export const addPostOnSubmit = (event) => {
   event.preventDefault();
   const input = document.getElementById('new-post');
   const privacityValue = document.getElementById('select-privacity').value;
 
-  addPost(input.value, privacityValue)
-
-  // addPost(input.value)
-  //   .then(() => {
-      
-  //   }).catch(() => {
-    
-  //   });
+  addPost(input.value, privacityValue)  
 }
 
 export const deletePostOnSubmit = (objPost) => {
   if (confirm('¿Está seguro que quiere eliminar este post?')) {
     deletePostOnClick(objPost.id);
   }
-}
-
-
-
-export const cerrarSesionONClick = () => {
-  cerrar()
-    .then(() => changeHash(''))
-    .catch(err => console.log('Error logout', err));
 }
 
 export const editionPostOnClick = (objPost) =>{	
@@ -135,14 +127,9 @@ export const getPostsByPrivacityOnClick = () => {
     
     console.log(posts)
         const div = document.getElementById('posts-list') 
-        // const muroPost = document.getElementById('muro-post');
-        // muroPost.innerHTML = '';       
         div.innerHTML = '';
         posts.forEach(post => {
           div.appendChild(itemPost(post));
-        });   
-        
-
-        
+        });        
   });
 }
