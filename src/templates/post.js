@@ -1,6 +1,6 @@
-import { addPostOnSubmit, deletePostOnSubmit, cerrarSesionONClick, editionPostOnClick, likeClick} from "../view-controller.js";
+import { addPostOnSubmit, deletePostOnSubmit, cerrarSesionONClick, editionPostOnClick, likeClick, getPostsByPrivacityOnClick} from "../view-controller.js";
 
-const itemPost = (objPost) => {
+export const itemPost = (objPost) => {
   const liElement = document.createElement('div');
   liElement.setAttribute("class", "contend-post");	
 
@@ -24,43 +24,69 @@ const itemPost = (objPost) => {
   // agregando evento de click al btn eliminar una nota
   liElement.querySelector(`#btn-deleted-${objPost.id}`)
     .addEventListener('click', () => deletePostOnSubmit(objPost));
-  liElement.querySelector(`#btn-edition-${objPost.id}`)	
-    .addEventListener('click', () => editionPostOnClick(objPost));
+
+  // liElement.querySelector(`#btn-edition-${objPost.id}`)	
+  //   .addEventListener('click', () => editionPostOnClick(objPost));
+
+liElement.querySelector(`#btn-edition-${objPost.id}`)
+    .addEventListener('click', () => {
+      document.getElementById(`text-${objPost.id}`).disabled = false;
+      const guardar = document.getElementById(`btn-edition-${objPost.id}`);	
+      const spaGuardar = document.getElementById(`span-${objPost.id}`)
+      spaGuardar.innerHTML= "Guardar";	
+
+      guardar.addEventListener("click", () => editionPostOnClick(objPost));
+    })
+
+
+
   liElement.querySelector(`#btn-like-${objPost.id}`)	
     .addEventListener('click', () => likeClick(objPost));
   return liElement;
 }
 
 
-export default (posts) => {
+export const post = (posts) => {
   const divContainer = document.createElement('div');
   const homeContent = `
-    <!-- form add post -->
-
-    <header class="header-menu">
-    <img id="img-logo" alt="img-logo" class="logo" src="ima/traveller.1.png" >
-    <a href='#login' id = "btn-cerrar-sesion"> Cerrar Sesión </a>
-    </nav>
-    </header>
-    <div   class="contenedor">
-    <a class = "contenedor-home">
-    <form>
-      <div id ="muro-post">
-        <input id="new-post" placeholder = "Agrega post" ></input>
-      </div>
-      <button id="btn-add-post"> Compartir
-      </button>
-    </form>
-
-    <!-- posts -->
-    <section>
-      <div id="posts-list">
-      </div>
-    </section>
-
-    <footer class="footer"> 
-    <label> Copyright </label>
-    </footer>
+  <!-- form add post -->
+  <nav class='menu'>
+      <a href='#/post'> <img id="img-logo" alt="img-logo" class="logo" src="ima/traveller.1.png">
+          <a href='#' id="btn-cerrar-sesion"> Cerrar Sesión </a>
+  </nav>
+  
+  <div id='contenedor' class="contenedor">
+      <a class="contenedor-home">
+  
+          <form>
+              <div id="muro-post">
+                  <input id="new-post" placeholder="Agrega post"></input>
+              </div>
+  
+              <select name="select" id="select-privacity">
+                  <option value="public">Público</option>
+                  <option value="private">Privado</option>
+              </select>
+  
+              <button id="btn-add-post"> Compartir
+              </button>
+          </form>
+          
+          <!-- posts -->
+          <section>
+              <select name="select" id="select-view-privacity">
+                  <option value="public">Ver post Públicos</option>
+                  <option value="private">Ver post Privados</option>
+              </select>
+          </section>
+          
+  
+          <div id="posts-list">
+          </div>
+  
+          <footer class="footer">
+          </footer>
+          </div>
     
   `;
 
@@ -72,8 +98,19 @@ export default (posts) => {
   });
   buttonAddPost.addEventListener('click', addPostOnSubmit);
 
+  divContainer.querySelector('#select-view-privacity').addEventListener('change', getPostsByPrivacityOnClick)
+
+
   const btnCerrarSesion = divContainer.querySelector('#btn-cerrar-sesion');
     btnCerrarSesion.addEventListener('click',cerrarSesionONClick);
    
   return divContainer;
 }
+
+// export const newCollection (posts) => {
+//   const divContainer = document.createElement('div');
+//   const collectionContent = `
+
+//   `
+//   return divContainer;
+// }

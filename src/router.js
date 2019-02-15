@@ -1,6 +1,6 @@
 import Login from './templates/login.js';
 import Create from './templates/createAccount.js';
-import Post from './templates/post.js';
+import {post} from './templates/post.js';
 import { getPosts } from './controller/controller-firebase.js';
 
 const changeTmp = (hash) => {
@@ -32,7 +32,7 @@ const viewTmp = (routers) => {
         console.log("prueba de hash")
         getPosts((posts) => {
         root.innerHTML = '';        
-        root.appendChild(Post(posts));  
+        root.appendChild(post(posts));  
       })
       } else {
         root.appendChild(Login());

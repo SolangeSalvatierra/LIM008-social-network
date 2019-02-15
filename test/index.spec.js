@@ -17,9 +17,9 @@ import {registrar} from"../src/controller/controller-firebase.js";
 
 describe('lista', () => {
   it('Debería poder crear cuenta', () => {
-    return  registrar ('elexisfer.18@gmail.com','000000')
+    return  registrar ('alexisfer.18@gmail.com','000000')
       .then((user) => {
-       expect(user.email).toBe('elexisfer.18@gmail.com')
+       expect(user.email).toBe('alexisfer.18@gmail.com')
       })
   });
 })
