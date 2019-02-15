@@ -90,11 +90,6 @@ export const addPostOnSubmit = (event) => {
   const privacityValue = document.getElementById("select-privacity");
 
   addPost(input.value, privacityValue.value)
-    .then(() => {
-      
-    }).catch(() => {
-    
-    });
 }
 
 export const deletePostOnSubmit = (objPost) => {
