@@ -55,7 +55,7 @@ export const loginFacebook = () => {
     
     const errorCode = error.code;
     const errorMessage = error.message;
-    // The email of the user's account used.
+     // The email of the user's account used.
     const email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
@@ -85,11 +85,12 @@ export const getPostsByPrivacity = (privacityValue, callback) =>{
     }); 
 }
 
-export const addPost = (textNewPost) => {
+export const addPost = (textNewPost, privacityValue) => {
     return firebase.firestore().collection('post').add({
+      likePost: 0,
       title: textNewPost,
-      state: false,
-      likePost: 0
+      state: false,      
+      privacity: privacityValue
     })
   }
   

@@ -52,7 +52,7 @@ import {addPost, getPosts, deletePostOnClick, editionPost, likeCountShow, getPos
 
 describe('muro', () => {
   it('Debería porder agregar un post', (done) => {
-    return addPost('probando agregar un post')
+    return addPost('probando agregar un post', 'public')
       .then(() => getPosts(
         (data) => {
           const result = data.find((note) => note.title === 'probando agregar un post');

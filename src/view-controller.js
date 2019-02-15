@@ -1,5 +1,6 @@
 import { registrar, acceder, cerrar, verificar, loginGoogle, loginFacebook, addPost,
-   deletePostOnClick, editionPost, likeCountShow } from './controller/controller-firebase.js';
+   deletePostOnClick, editionPost, likeCountShow, getPostsByPrivacity } from './controller/controller-firebase.js';
+import {itemPost} from './templates/post.js';
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -88,13 +89,16 @@ export const signInOnSubmitFacebook = () => {
 export const addPostOnSubmit = (event) => {
   event.preventDefault();
   const input = document.getElementById('new-post');
+  const privacityValue = document.getElementById('select-privacity').value;
 
-  addPost(input.value)
-    .then(() => {
+  addPost(input.value, privacityValue)
+
+  // addPost(input.value)
+  //   .then(() => {
       
-    }).catch(() => {
+  //   }).catch(() => {
     
-    });
+  //   });
 }
 
 export const deletePostOnSubmit = (objPost) => {
@@ -122,4 +126,23 @@ export const likeClick = (objPost) =>{
   return likeCountShow(objPost.id, newLike);
 
 }
-  
+
+export const getPostsByPrivacityOnClick = () => {
+  console.log('probar si llama función')
+  const privacityViewValue = document.getElementById('select-view-privacity').value;
+  console.log(privacityViewValue);
+  return getPostsByPrivacity(privacityViewValue, (posts) => {
+    
+    console.log(posts)
+        const div = document.getElementById('posts-list') 
+        // const muroPost = document.getElementById('muro-post');
+        // muroPost.innerHTML = '';       
+        div.innerHTML = '';
+        posts.forEach(post => {
+          div.appendChild(itemPost(post));
+        });   
+        
+
+        
+  });
+}
