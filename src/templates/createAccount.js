@@ -23,7 +23,7 @@ export  default () => {
     <div>
         <input class="text-field" id="email" type="email" placeholder="Correo">
         <input class="text-field" id="password" type="password" placeholder="Contraseña">
-        <button type="button" id="btn-crear"> Registrate </button>
+        <button type="button" id="btn-crear"> Regístrate </button>
     </div>
 
     <div>

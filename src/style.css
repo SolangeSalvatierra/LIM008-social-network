@@ -229,11 +229,11 @@ span{
 
 @media screen and (min-width:480px) {
 
-  /* body {
+  body {
     background-image:url("ima/OS5DEC0.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-} */
+}
 
 .contend-post {
   font: 1em sans-serif;

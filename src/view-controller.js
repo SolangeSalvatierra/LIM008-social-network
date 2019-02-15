@@ -125,7 +125,6 @@ export const getPostsByPrivacityOnClick = () => {
   console.log(privacityViewValue);
   return getPostsByPrivacity(privacityViewValue, (posts) => {
     
-    console.log(posts)
         const div = document.getElementById('posts-list') 
         div.innerHTML = '';
         posts.forEach(post => {
